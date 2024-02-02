@@ -1,0 +1,25 @@
+/* global button settings */
+
+.button {
+  border: none;
+  border-radius: 5px;
+  padding: 15px 30px;
+  font-weight: 400;
+  color: #fff;
+  font-size: 14px;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.25s ease;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21);
+  background-image: linear-gradient(to top, #1eacc7 0, #4ce2ff 100%);
+}
+
+.button:hover {
+  background-image: linear-gradient(to top, #1eacc7 0, rgb(11, 165, 204) 100%);
+}
+
+.button_active {
+  background-image: linear-gradient(to right, grey, grey);
+  pointer-events: none;
+  cursor: not-allowed;
+}

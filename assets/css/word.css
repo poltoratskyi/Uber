@@ -1,0 +1,26 @@
+/* word section */
+
+.word {
+  position: relative;
+  height: 100vh;
+  background: url(../img/bg/map-min.jpg) center center/cover no-repeat;
+  padding: 49px 0;
+}
+
+.word__link {
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 50px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  color: #1fbad6;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.word__link:hover {
+  color: #fff;
+}

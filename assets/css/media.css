@@ -1,0 +1,343 @@
+/* media section*/
+
+@media (max-width: 1199px) {
+  .container {
+    width: 80%;
+  }
+  .menu__item {
+    padding-right: 13px;
+  }
+  .subtitle {
+    line-height: 23px;
+  }
+  .mobile-block {
+    justify-content: space-around;
+  }
+  .reasons-block__wrapper {
+    width: 50%;
+  }
+  .reasons-block__content-decor {
+    margin-right: 15px;
+  }
+  .subheader__wrapper {
+    padding: 10px 0px;
+  }
+  .choice__car-img {
+    width: 70%;
+  }
+  .header__content-title {
+    font-size: 44px;
+  }
+  .header__content-subtitle {
+    font-size: 28px;
+  }
+  .advertising,
+  .coupon {
+    width: 450px;
+    height: 225px;
+  }
+  .modal-registration__form-content {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 991px) {
+  .decor_translucent {
+    top: 56px;
+  }
+  .reasons-block {
+    flex-direction: column;
+  }
+  .reasons-block__wrapper {
+    width: 100%;
+  }
+  .menu__item {
+    padding-right: 10px;
+  }
+  .reasons-block__content {
+    height: auto;
+  }
+  .menu__item {
+    border-right: none;
+    padding-right: 0px;
+  }
+  .menu__item-link {
+    font-size: 12px;
+  }
+  .reasons-block__content_indent-block-one {
+    padding-bottom: 15px;
+  }
+  .mobile-block__wrapper_indent-block-one {
+    padding-bottom: 20px;
+  }
+  .choice__car-img {
+    width: 80%;
+  }
+  .advertising,
+  .coupon {
+    width: 370px;
+    height: 185px;
+  }
+  .button-advertising {
+    padding: 15px 15px;
+    left: 10%;
+  }
+}
+
+@media (max-width: 767px) {
+  .button_registration-form {
+    padding: 15px 30px;
+  }
+  .decor_translucent {
+    top: 42px;
+  }
+  .decor_translucent_active {
+    top: -100%;
+  }
+  .hamburger {
+    display: block;
+  }
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: #000;
+    width: 50%;
+    transition: 0.5s all;
+    z-index: 3;
+  }
+  .menu_active {
+    display: block;
+    right: 0%;
+    transition: 1s all;
+  }
+  .menu__items {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+  }
+  .require-block__wrapper {
+    margin-bottom: 35px;
+  }
+  .header__promo {
+    padding: 100px 0px 30px;
+  }
+  .reasons {
+    padding: 35px 0px 30px;
+  }
+  .mobile {
+    padding: 25px 0px 40px;
+  }
+  .choice {
+    padding: 30px 0px 40px;
+  }
+  .require {
+    padding: 35px 0px 40px;
+  }
+  .word {
+    padding: 25px 0px;
+  }
+  .footer {
+    padding: 7px 0px;
+  }
+  .footer__feedback-links {
+    margin: 15px 0px 10px;
+  }
+  .footer__support-links {
+    margin-bottom: 10px;
+  }
+  .subheader__logo {
+    width: 50px;
+  }
+  .subheader__logo-description {
+    display: none;
+  }
+  .subheader__logo-icon {
+    width: 100%;
+  }
+  .button {
+    padding: 10px 20px;
+  }
+  .contact-info {
+    padding-right: 10px;
+  }
+  .subheader__contacts-number {
+    font-size: 14px;
+  }
+  .header__content-title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .header__content-subtitle {
+    font-size: 20px;
+  }
+  .header__content-description {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .title {
+    font-size: 24px;
+  }
+  .reasons-block__content-description {
+    font-size: 14px;
+  }
+  .reasons-block__content-label {
+    font-size: 14px;
+  }
+  .reasons-block__content-decor {
+    min-width: 90px;
+    min-height: 90px;
+  }
+  .mobile-block__title {
+    font-size: 20px;
+  }
+  .require-block__wrapper {
+    flex-direction: column;
+  }
+  .require-block__content {
+    width: 100%;
+  }
+  .require-block__description {
+    margin: 10px 0px 25px;
+  }
+  .require-block__content_indent-block-two {
+    margin-bottom: 25px;
+  }
+  .choice__car-img {
+    width: 100%;
+  }
+  .advertising,
+  .coupon {
+    display: none;
+  }
+  .consultation {
+    height: 200px;
+  }
+  @keyframes ring {
+    0% {
+      width: 65px;
+      height: 65px;
+      opacity: 1;
+    }
+    100% {
+      width: 120px;
+      height: 120px;
+      opacity: 0;
+    }
+  }
+  .button-close-consultation::before,
+  .button-open-consultation::before {
+    width: 65px;
+    height: 65px;
+  }
+  .button-close-consultation,
+  .button-open-consultation {
+    padding: 0px 5px;
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media (max-width: 575px) {
+  .modal-callback__header,
+  .modal-registration__header {
+    height: 8%;
+  }
+  .modal-registration,
+  .modal-callback {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+  }
+  .modal-registration__wrapper,
+  .modal-callback__wrapper {
+    flex-direction: column;
+    height: 92%;
+    padding: 10px;
+  }
+  .modal-registration__form,
+  .modal-callback__form {
+    width: auto;
+    height: 100%;
+    border-right: none;
+    padding-right: 0px;
+  }
+  .modal-registration__form-content {
+    height: 100px;
+  }
+  .consultation {
+    display: none;
+  }
+  .autorisation-form {
+    display: none;
+  }
+  .header__content-title {
+    font-size: 20px;
+  }
+  .header__content-subtitle {
+    line-height: 24px;
+    font-size: 18px;
+  }
+  .container {
+    width: 95%;
+  }
+  .mobile-block__wrapper {
+    padding: 0px 0px 10px;
+  }
+  .mobile-block__wrapper:last-child {
+    padding-bottom: 0px;
+  }
+  .mobile-block__decor {
+    width: 300px;
+    height: 260px;
+  }
+  .reasons-block__content {
+    padding: 10px;
+  }
+  .reasons-block__content {
+    flex-direction: column;
+  }
+  .reasons-block__content-description {
+    text-align: center;
+  }
+  .subheader__contact-info {
+    display: none;
+  }
+  .footer__feedback-links {
+    font-size: 10px;
+  }
+  .footer__support-links {
+    font-size: 9px;
+  }
+  .footer__languages-links {
+    font-size: 10px;
+  }
+  .word__link {
+    font-size: 12px;
+  }
+  .title {
+    font-size: 20px;
+  }
+  .subtitle {
+    font-size: 18px;
+  }
+  .item {
+    font-size: 14px;
+  }
+  .require-title {
+    font-size: 16px;
+  }
+  .require-block__description {
+    text-align: center;
+    font-size: 14px;
+  }
+  .choice__decor {
+    min-height: 60%;
+  }
+  .menu {
+    width: 100%;
+  }
+  .success {
+    width: 80%;
+  }
+}
