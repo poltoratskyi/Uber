@@ -53,11 +53,11 @@
 }
 
 .list-item_blue::before {
-  background: url(../icons/check_blue.svg) center center/cover no-repeat;
+  background: url(../icons/Check_blue.svg) center center/cover no-repeat;
 }
 
 .list-item_red::before {
-  background: url(../icons/check_red.svg) center center/cover no-repeat;
+  background: url(../icons/Check_red.svg) center center/cover no-repeat;
 }
 
 .list-item_red::before,
