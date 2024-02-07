@@ -661,9 +661,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const advertisingLink = document.querySelector(".advertising__link");
 
+  const subheaderLogoLink = document.querySelector(".subheader__logo-link");
+
   const smoothScroll = (element) => {
     element.scrollIntoView({ behavior: "smooth" });
   };
+
+  subheaderLogoLink.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    smoothScroll(toGeneral);
+  });
 
   general.addEventListener("click", (e) => {
     e.preventDefault();
@@ -783,4 +791,12 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   /* /////////////////////////////////////////////////////////////////////// */
+
+  /* Validator css  */
+
+  const validator = document.querySelector(".css-validator-link");
+
+  validator.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
 });

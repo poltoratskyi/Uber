@@ -6,7 +6,7 @@
 
 .require-title {
   font-size: 22px;
-  font-weight: 400;
+  font-family: "Roboto Regular";
 }
 
 .require-title_blue {
@@ -42,7 +42,7 @@
 
 .item {
   font-size: 17px;
-  font-weight: 300;
+  font-family: "Roboto Light";
   line-height: 24px;
 }
 
@@ -73,7 +73,7 @@
 
 .require-block__description {
   font-size: 17px;
-  font-weight: 300;
+  font-family: "Roboto Light";
   line-height: 24px;
   color: #1ca8c3;
   margin-top: 25px;

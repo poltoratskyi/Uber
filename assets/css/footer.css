@@ -21,7 +21,7 @@
   display: flex;
   color: #070716;
   font-size: 15px;
-  font-weight: 300;
+  font-family: "Roboto Light";
   text-transform: uppercase;
   margin: 30px 0px 20px;
 }
@@ -38,7 +38,7 @@
   display: flex;
   color: #999;
   font-size: 11px;
-  font-weight: 300;
+  font-family: "Roboto Light";
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -55,7 +55,7 @@
   display: flex;
   color: #1fbad6;
   font-size: 11px;
-  font-weight: 400;
+  font-family: "Roboto Regular";
   text-transform: uppercase;
 }
 

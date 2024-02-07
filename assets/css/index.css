@@ -1,5 +1,7 @@
-@import url("./modal.css");
+@import url("./reset.css");
+@import url("./animate.css");
 
+@import url("./modal.css");
 @import url("./hamburger.css");
 
 @import url("./header.css");
@@ -11,11 +13,34 @@
 @import url("./footer.css");
 
 @import url("./button-settings.css");
-
 @import url("./utilities.css");
 
 @import url("./media.css");
 
-* {
-  font-family: "Roboto", "sans-serif";
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../fonts/Roboto-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("../fonts/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("../fonts/Roboto-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../fonts/Roboto-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
 }
