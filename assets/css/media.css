@@ -241,7 +241,7 @@
 @media (max-width: 575px) {
   .modal-callback__header,
   .modal-registration__header {
-    height: 6%;
+    height: 10%;
   }
   .modal-registration,
   .modal-callback {
@@ -252,7 +252,7 @@
   .modal-registration__wrapper,
   .modal-callback__wrapper {
     flex-direction: column;
-    height: 94%;
+    height: 100%;
     padding: 10px;
   }
   .modal-registration__form,

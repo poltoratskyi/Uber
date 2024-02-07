@@ -3,7 +3,6 @@
 .word {
   position: relative;
   height: 100vh;
-  background: url(../img/bg/map-min.jpg) center center/cover no-repeat;
   padding: 49px 0;
 }
 

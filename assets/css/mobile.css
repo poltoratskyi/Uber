@@ -21,8 +21,6 @@
 
 .mobile-block__decor {
   position: relative;
-  background: url(../img/bg/mobile_screen_1-min.jpg) center center/cover
-    no-repeat;
   width: 320px;
   height: 280px;
 }

@@ -1,4 +1,102 @@
 window.addEventListener("DOMContentLoaded", () => {
+  /* Check webp block */
+
+  const supportsWebP = () => {
+    const elem = document.createElement("canvas");
+    if (!!(elem.getContext && elem.getContext("2d"))) {
+      return elem.toDataURL("image/webp").indexOf("data:image/webp") === 0;
+    }
+    return false;
+  };
+
+  /* header section */
+
+  if (supportsWebP()) {
+    document.querySelector(".header").style.backgroundImage =
+      "url(assets/img/bg/webp/main_bg-min.webp)";
+  } else {
+    document.querySelector(".header").style.backgroundImage =
+      "url(assets/img/bg/main_bg-min.jpg)";
+  }
+
+  /* mobile section */
+
+  if (supportsWebP()) {
+    document.querySelector(
+      ".mobile-block__decor_item-one"
+    ).style.backgroundImage =
+      "url(assets/img/bg/webp/mobile_screen_1-min.webp)";
+  } else {
+    document.querySelector(
+      ".mobile-block__decor_item-one"
+    ).style.backgroundImage = "url(assets/img/bg/mobile_screen_1-min.jpg)";
+  }
+
+  if (supportsWebP()) {
+    document.querySelector(
+      ".mobile-block__decor_item-two"
+    ).style.backgroundImage =
+      "url(assets/img/bg/webp/mobile_screen_2-min.webp)";
+  } else {
+    document.querySelector(
+      ".mobile-block__decor_item-two"
+    ).style.backgroundImage = "url(assets/img/bg/mobile_screen_2-min.jpg)";
+  }
+
+  if (supportsWebP()) {
+    document.querySelector(
+      ".mobile-block__decor_item-three"
+    ).style.backgroundImage =
+      "url(assets/img/bg/webp/mobile_screen_3-min.webp)";
+  } else {
+    document.querySelector(
+      ".mobile-block__decor_item-three"
+    ).style.backgroundImage = "url(assets/img/bg/mobile_screen_3-min.jpg)";
+  }
+
+  if (supportsWebP()) {
+    document.querySelector(
+      ".mobile-block__decor_item-four"
+    ).style.backgroundImage =
+      "url(assets/img/bg/webp/mobile_screen_4-min.webp)";
+  } else {
+    document.querySelector(
+      ".mobile-block__decor_item-four"
+    ).style.backgroundImage = "url(assets/img/bg/mobile_screen_4-min.jpg)";
+  }
+
+  if (supportsWebP()) {
+    document.querySelector(
+      ".mobile-block__decor_item-five"
+    ).style.backgroundImage =
+      "url(assets/img/bg/webp/mobile_screen_5-min.webp)";
+  } else {
+    document.querySelector(
+      ".mobile-block__decor_item-five"
+    ).style.backgroundImage = "url(assets/img/bg/mobile_screen_5-min.jpg)";
+  }
+
+  if (supportsWebP()) {
+    document.querySelector(
+      ".mobile-block__decor_item-six"
+    ).style.backgroundImage =
+      "url(assets/img/bg/webp/mobile_screen_6-min.webp)";
+  } else {
+    document.querySelector(
+      ".mobile-block__decor_item-fix"
+    ).style.backgroundImage = "url(assets/img/bg/mobile_screen_6-min.jpg)";
+  }
+
+  /* word section */
+
+  if (supportsWebP()) {
+    document.querySelector(".word").style.backgroundImage =
+      "url(assets/img/bg/webp/map-min.webp)";
+  } else {
+    document.querySelector(".header").style.backgroundImage =
+      "url(assets/img/bg/map-min.jpg";
+  }
+
   /* Hamburger block */
 
   const menu = document.querySelector(".menu");

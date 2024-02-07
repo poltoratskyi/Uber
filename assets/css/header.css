@@ -1,9 +1,5 @@
 /* header section*/
 
-.header {
-  background: url(../img/bg/main_bg-min.jpg) center center/cover no-repeat;
-}
-
 .decor {
   transition: 1s all;
   z-index: 2;
