@@ -83,7 +83,7 @@ window.addEventListener("DOMContentLoaded", () => {
       "url(assets/img/bg/webp/mobile_screen_6-min.webp)";
   } else {
     document.querySelector(
-      ".mobile-block__decor_item-fix"
+      ".mobile-block__decor_item-six"
     ).style.backgroundImage = "url(assets/img/bg/mobile_screen_6-min.jpg)";
   }
 
@@ -93,7 +93,7 @@ window.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".word").style.backgroundImage =
       "url(assets/img/bg/webp/map-min.webp)";
   } else {
-    document.querySelector(".header").style.backgroundImage =
+    document.querySelector(".word").style.backgroundImage =
       "url(assets/img/bg/map-min.jpg";
   }
 
