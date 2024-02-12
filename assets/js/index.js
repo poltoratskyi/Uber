@@ -832,7 +832,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const onOurCar = document.getElementById("on-our-car");
   const toConditions = document.getElementById("to-conditions");
 
-  const require = document.getElementById("require");
+  const requireId = document.getElementById("require");
   const toRequire = document.getElementById("to-require");
 
   const geolocation = document.getElementById("geolocation");
@@ -841,6 +841,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const advertisingLink = document.querySelector(".advertising__link");
 
   const subheaderLogoLink = document.querySelector(".subheader__logo-link");
+
+  const wordLink = document.querySelector(".word__link");
 
   const smoothScroll = (element) => {
     element.scrollIntoView({ behavior: "smooth" });
@@ -882,7 +884,7 @@ window.addEventListener("DOMContentLoaded", () => {
     smoothScroll(toConditions);
   });
 
-  require.addEventListener("click", (e) => {
+  requireId.addEventListener("click", (e) => {
     e.preventDefault();
 
     smoothScroll(toRequire);
@@ -892,6 +894,10 @@ window.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     smoothScroll(toGeolocation);
+  });
+
+  wordLink.addEventListener("click", (e) => {
+    e.preventDefault();
   });
 
   /* /////////////////////////////////////////////////////////////////////// */
@@ -906,11 +912,17 @@ window.addEventListener("DOMContentLoaded", () => {
   document.onscroll = () => {
     let scroll = window.scrollY;
 
+    /* Decor */
+
     if (scroll > decor.offsetTop) {
       decorGrey.style.top = "0px";
     } else {
       decorGrey.style.top = "";
     }
+
+    /* ---------------------------------------------------------------------- */
+
+    /* Utilities */
 
     if (scroll > 1200) {
       consultation.classList.add("consultation_active");
