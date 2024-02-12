@@ -36,9 +36,6 @@
     width: 450px;
     height: 225px;
   }
-  .modal-registration__form-content {
-    margin-bottom: 5px;
-  }
 }
 
 @media (max-width: 991px) {
@@ -62,7 +59,7 @@
     padding-right: 0px;
   }
   .menu__item-link {
-    font-size: 12px;
+    font-size: 13px;
   }
   .reasons-block__content_indent-block-one {
     padding-bottom: 15px;
@@ -85,6 +82,9 @@
 }
 
 @media (max-width: 767px) {
+  .menu__item-link {
+    font-size: 15px;
+  }
   .button_registration-form {
     padding: 15px 30px;
   }
@@ -239,10 +239,6 @@
 }
 
 @media (max-width: 575px) {
-  .modal-callback__header,
-  .modal-registration__header {
-    height: 10%;
-  }
   .modal-registration,
   .modal-callback {
     width: 100%;
@@ -251,19 +247,14 @@
   }
   .modal-registration__wrapper,
   .modal-callback__wrapper {
-    flex-direction: column;
-    height: 100%;
     padding: 10px;
   }
   .modal-registration__form,
   .modal-callback__form {
     width: auto;
-    height: 100%;
+    height: 100vh;
     border-right: none;
     padding-right: 0px;
-  }
-  .modal-registration__form-content {
-    height: 100px;
   }
   .consultation {
     display: none;
