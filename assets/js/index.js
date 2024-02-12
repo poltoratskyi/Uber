@@ -184,6 +184,9 @@ window.addEventListener("DOMContentLoaded", () => {
     ".registration-overflow"
   );
   const buttonRegistration = document.querySelector(".button_registration");
+  const buttonRegistrationForm = document.querySelector(
+    ".button_registration-form"
+  );
   const modalCloseRegistration = document.querySelectorAll(
     ".modal-registration__header-close"
   );
@@ -340,6 +343,8 @@ window.addEventListener("DOMContentLoaded", () => {
       regPhoneNumber.style.border = "1px solid red";
     }
 
+    /* Result Submit check */
+
     const resultValidation = [
       firstNameIsValid,
       lastNameIsValid,
@@ -378,82 +383,121 @@ window.addEventListener("DOMContentLoaded", () => {
 
   /* firstname input */
 
+  let isRegFirstNameValid = false;
+
   regFirstName.addEventListener("input", () => {
-    const isValid =
+    isRegFirstNameValid =
       /^[а-яА-Я]{2,}$/.test(regFirstName.value) &&
       regFirstName.value.trim() !== "";
 
-    if (isValid) {
+    if (isRegFirstNameValid) {
       regFirstNameError.style.display = "none";
       regFirstName.style.border = "1px solid green";
     } else {
       regFirstNameError.style.display = "block";
       regFirstName.style.border = "1px solid red";
     }
+
+    updateRegButtonState();
   });
 
   /* lastName input */
 
+  let isRegLastNameValid = false;
+
   regLastName.addEventListener("input", () => {
-    const isValid =
+    isRegLastNameValid =
       /^[а-яА-Я]{3,}$/.test(regLastName.value) &&
       regLastName.value.trim() !== "";
 
-    if (isValid) {
+    if (isRegLastNameValid) {
       regLastNameError.style.display = "none";
       regLastName.style.border = "1px solid green";
     } else {
       regLastNameError.style.display = "block";
       regLastName.style.border = "1px solid red";
     }
+
+    updateRegButtonState();
   });
 
   /* cities input */
 
-  regCities.addEventListener("input", () => {
-    const isValid = regCities.value === "";
+  let isRegCitiesValid = false;
 
-    if (isValid) {
-      regCitiesError.style.display = "block";
-      regCities.style.border = "1px solid red";
-    } else {
+  regCities.addEventListener("input", () => {
+    isRegCitiesValid = regCities.value.trim() !== "";
+
+    if (isRegCitiesValid) {
       regCitiesError.style.display = "none";
       regCities.style.border = "1px solid green";
+    } else {
+      regCitiesError.style.display = "block";
+      regCities.style.border = "1px solid red";
     }
 
-    /* phoneNumber input */
-
-    regPhoneNumber.addEventListener("input", () => {
-      const isValid =
-        /^\d{10}$/.test(regPhoneNumber.value) &&
-        regPhoneNumber.value.trim() !== "";
-
-      if (isValid) {
-        regPhoneNumberError.style.display = "none";
-        regPhoneNumber.style.border = "1px solid green";
-      } else {
-        regPhoneNumberError.style.display = "block";
-        regPhoneNumber.style.border = "1px solid red";
-      }
-    });
-
-    /* email input */
-
-    regEmail.addEventListener("input", () => {
-      const isValid =
-        /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|yandex\.ru)$/i.test(
-          regEmail.value
-        ) && regEmail.value.trim() !== "";
-
-      if (isValid) {
-        regEmailError.style.display = "none";
-        regEmail.style.border = "1px solid green";
-      } else {
-        regEmailError.style.display = "block";
-        regEmail.style.border = "1px solid red";
-      }
-    });
+    updateRegButtonState();
   });
+
+  /* phoneNumber input */
+
+  let isRegPhoneNumberValid = false;
+
+  regPhoneNumber.addEventListener("input", () => {
+    isRegPhoneNumberValid =
+      /^\d{10}$/.test(regPhoneNumber.value) &&
+      regPhoneNumber.value.trim() !== "";
+
+    if (isRegPhoneNumberValid) {
+      regPhoneNumberError.style.display = "none";
+      regPhoneNumber.style.border = "1px solid green";
+    } else {
+      regPhoneNumberError.style.display = "block";
+      regPhoneNumber.style.border = "1px solid red";
+    }
+
+    updateRegButtonState();
+  });
+
+  /* email input */
+
+  let isRegEmailValid = false;
+
+  regEmail.addEventListener("input", () => {
+    isRegEmailValid =
+      /^[a-zA-Z0-9._%+-]+@(gmail\.com|yahoo\.com|outlook\.com|hotmail\.com|yandex\.ru)$/i.test(
+        regEmail.value
+      ) && regEmail.value.trim() !== "";
+
+    if (isRegEmailValid) {
+      regEmailError.style.display = "none";
+      regEmail.style.border = "1px solid green";
+    } else {
+      regEmailError.style.display = "block";
+      regEmail.style.border = "1px solid red";
+    }
+
+    updateRegButtonState();
+  });
+
+  /* Result Input check */
+
+  const updateRegButtonState = () => {
+    const resultRegInputValid =
+      isRegFirstNameValid &&
+      isRegLastNameValid &&
+      isRegCitiesValid &&
+      isRegPhoneNumberValid &&
+      isRegEmailValid;
+
+    if (resultRegInputValid) {
+      buttonRegistrationForm.classList.remove("button_active");
+    } else {
+      buttonRegistrationForm.classList.add("button_active");
+    }
+  };
+
+  updateRegButtonState();
 
   /* /////////////////////////////////////////////////////////////////////// */
 
@@ -461,6 +505,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const callbackOverflowHiden = document.querySelector(".callback-overflow");
   const buttonCallback = document.querySelector(".button_callback");
+  const buttonCallbackForm = document.querySelector(".button_callback-form");
   const modalCloseCallback = document.querySelectorAll(
     ".modal-callback__header-close"
   );
@@ -547,7 +592,7 @@ window.addEventListener("DOMContentLoaded", () => {
       callbackFirstName.style.border = "1px solid red";
     }
 
-    /* last submit */
+    /* lastName submit */
 
     const lastNameIsValid =
       /^[а-яА-Я]{3,}$/.test(callbackLastName.value) &&
@@ -601,6 +646,8 @@ window.addEventListener("DOMContentLoaded", () => {
       callbackPhoneNumber.style.border = "1px solid red";
     }
 
+    /* Result Submit check */
+
     const resultValidation = [
       firstNameIsValid,
       lastNameIsValid,
@@ -637,65 +684,99 @@ window.addEventListener("DOMContentLoaded", () => {
 
   /* firstname input */
 
+  let isCallbackFirstNameValid = false;
+
   callbackFirstName.addEventListener("input", () => {
-    const isValid =
+    isCallbackFirstNameValid =
       /^[а-яА-Я]{2,}$/.test(callbackFirstName.value) &&
       callbackFirstName.value.trim() !== "";
 
-    if (isValid) {
+    if (isCallbackFirstNameValid) {
       callbackFirstNameError.style.display = "none";
       callbackFirstName.style.border = "1px solid green";
     } else {
       callbackFirstNameError.style.display = "block";
       callbackFirstName.style.border = "1px solid red";
     }
+
+    updateInputButtonState();
   });
 
   /* lastName input */
 
+  let isCallbackLastNameValid = false;
+
   callbackLastName.addEventListener("input", () => {
-    const isValid =
+    isCallbackLastNameValid =
       /^[а-яА-Я]{3,}$/.test(callbackLastName.value) &&
       callbackLastName.value.trim() !== "";
 
-    if (isValid) {
+    if (isCallbackLastNameValid) {
       callbackLastNameError.style.display = "none";
       callbackLastName.style.border = "1px solid green";
     } else {
       callbackLastNameError.style.display = "block";
       callbackLastName.style.border = "1px solid red";
     }
+
+    updateInputButtonState();
   });
 
   /* cities input */
 
-  callbackCities.addEventListener("input", () => {
-    const isValid = callbackCities.value === "";
+  let isCallbackCitiesValid = false;
 
-    if (isValid) {
-      callbackCitiesError.style.display = "block";
-      callbackCities.style.border = "1px solid red";
-    } else {
+  callbackCities.addEventListener("input", () => {
+    isCallbackCitiesValid = callbackCities.value.trim() !== "";
+
+    if (isCallbackCitiesValid) {
       callbackCitiesError.style.display = "none";
       callbackCities.style.border = "1px solid green";
+    } else {
+      callbackCitiesError.style.display = "block";
+      callbackCities.style.border = "1px solid red";
     }
+
+    updateInputButtonState();
   });
 
   /* phoneNumber input */
 
+  let isCallbackPhoneNumberValid = false;
+
   callbackPhoneNumber.addEventListener("input", () => {
-    const isValid =
+    isCallbackPhoneNumberValid =
       /^\d{10}$/.test(callbackPhoneNumber.value) &&
       callbackPhoneNumber.value.trim() !== "";
 
-    if (isValid) {
+    if (isCallbackPhoneNumberValid) {
       callbackPhoneNumberError.style.display = "none";
       callbackPhoneNumber.style.border = "1px solid green";
     } else {
       callbackPhoneNumberError.style.display = "block";
       callbackPhoneNumber.style.border = "1px solid red";
     }
+
+    updateInputButtonState();
   });
+
+  /* Result Input check */
+
+  const updateInputButtonState = () => {
+    const resultCallbackInputValid =
+      isCallbackFirstNameValid &&
+      isCallbackLastNameValid &&
+      isCallbackCitiesValid &&
+      isCallbackPhoneNumberValid;
+
+    if (resultCallbackInputValid) {
+      buttonCallbackForm.classList.remove("button_active");
+    } else {
+      buttonCallbackForm.classList.add("button_active");
+    }
+  };
+
+  updateInputButtonState();
 
   /* /////////////////////////////////////////////////////////////////////// */
 

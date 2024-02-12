@@ -72,7 +72,7 @@
 .modal-callback__wrapper {
   display: flex;
   align-items: start;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
 .modal-registration__form,
@@ -83,7 +83,7 @@
   width: 55%;
   border-right: 1px solid #e9e9e9;
   padding-right: 5%;
-  min-height: 500px;
+  min-height: 550px;
 }
 
 .modal-registration__form-content,
