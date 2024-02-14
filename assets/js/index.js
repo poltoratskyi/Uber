@@ -202,6 +202,8 @@ window.addEventListener("DOMContentLoaded", () => {
     buttonRegistration.classList.add("button_active");
 
     advertising.classList.remove("advertising_active");
+
+    document.addEventListener("keydown", closeRegModalOnEscape);
   });
 
   /* Open modal window of registration form -> adv */
@@ -229,6 +231,20 @@ window.addEventListener("DOMContentLoaded", () => {
       buttonRegistration.classList.remove("button_active");
     });
   });
+
+  /* Close modal window of registration form -> keydown Escape */
+
+  const closeRegModalOnEscape = (event) => {
+    if (event.key === "Escape") {
+      overflowHidenRegistration.classList.remove(
+        "registration-overflow_active"
+      );
+
+      document.body.style.overflow = "auto";
+
+      buttonRegistration.classList.remove("button_active");
+    }
+  };
 
   /* Privacy link registration form window */
 
@@ -518,6 +534,8 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden";
 
     buttonCallback.classList.add("button_active");
+
+    document.addEventListener("keydown", closeCallbackModalOnEscape);
   });
 
   /* Close modal window of callback form */
@@ -533,6 +551,20 @@ window.addEventListener("DOMContentLoaded", () => {
       buttonCallback.classList.remove("button_active");
     });
   });
+
+  /* Close modal window of callback form -> keydown Escape */
+
+  const closeCallbackModalOnEscape = (event) => {
+    if (event.key === "Escape") {
+      callbackOverflowHiden.classList.remove("callback-overflow_active");
+
+      document.body.style.overflow = "auto";
+
+      buttonCallback.classList.remove("button_active");
+
+      coupon.classList.add("coupon_active");
+    }
+  };
 
   /* Privacy link callback form window */
 

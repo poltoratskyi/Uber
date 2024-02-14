@@ -21,7 +21,7 @@
   height: 2px;
   background-color: #fff;
   margin-bottom: 3px;
-  transition: all 0.5s ease;
+  transition: 0.3s ease;
 }
 
 .hamburger__span:last-child {

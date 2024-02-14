@@ -9,7 +9,7 @@
   font-size: 14px;
   overflow: hidden;
   z-index: 1;
-  transition: all 0.25s ease;
+  transition: 0.3s ease;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21);
   background-image: linear-gradient(to top, #1eacc7 0, #4ce2ff 100%);
 }

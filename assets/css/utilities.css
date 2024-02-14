@@ -8,13 +8,12 @@
   z-index: 2;
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease;
 }
 
 .arrow-up_active {
   visibility: visible;
   opacity: 1;
-  transition: 0.3s ease-in-out;
 }
 
 /* success section */
@@ -89,20 +88,19 @@
 .consultation__link {
   visibility: hidden;
   opacity: 0;
-  transition: 0.2s ease-in-out;
+  transition: 0.3s ease;
 }
 
 .consultation__link_active {
   visibility: visible;
   opacity: 1;
-  transition: 0.2s ease-in;
   padding: 1px;
 }
 
 .consultation_active {
   visibility: visible;
   opacity: 1;
-  transition: 1s ease-in;
+  transition: 1s ease;
 }
 
 .button-open-consultation,
@@ -113,7 +111,6 @@
   background-image: linear-gradient(to top, #1eacc7 0, #4ce2ff 100%);
   border-radius: 100%;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21);
-  transition: all 0.5s ease-in-out 0s;
   cursor: pointer;
   position: relative;
   padding: 5px 10px;
@@ -132,7 +129,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: all 0.5s ease-in-out 0s;
 }
 
 .button-open-consultation:hover::before,

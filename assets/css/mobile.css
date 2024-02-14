@@ -44,7 +44,6 @@
   padding: 60px 5px 0px;
   left: 50%;
   top: 0%;
-  transition: 0.5s ease-in-out;
 }
 
 .mobile-block__title_active,
@@ -53,17 +52,12 @@
   opacity: 0;
 }
 
-.mobile-block__hiden-title {
-  transition: 0.5s ease-in;
-}
-
 .mobile-block__hiden-title_active {
   visibility: visible;
   opacity: 1;
 }
 
-.mobile-block__image_active,
-.mobile-block__image:hover {
+.mobile-block__image_active {
   background-color: #fff;
 }
 

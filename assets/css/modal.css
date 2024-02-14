@@ -9,15 +9,15 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 5;
   visibility: hidden;
-  opacity: 0;
-  transition: 0.5s ease-in-out;
+  transform: scale(0);
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s, transform 0.3s ease;
 }
 
 .registration-overflow_active,
 .callback-overflow_active {
-  opacity: 1;
   visibility: visible;
-  transition: 0.5s ease-in;
+  transform: scale(1);
+  transition: opacity 0.3s ease, visibility 0s linear 0s, transform 0.3s ease;
 }
 
 .modal-registration,
@@ -112,7 +112,7 @@
   color: #333;
   border: 0.5px solid #ccc;
   border-radius: 10px;
-  transition: border-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .modal-registration__form-input::placeholder,
