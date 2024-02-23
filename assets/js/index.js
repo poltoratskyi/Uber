@@ -287,6 +287,14 @@ window.addEventListener("DOMContentLoaded", () => {
     ".modal-registration__form-error_phoneNumber"
   );
 
+  /* Imask */
+
+  const regMaskOptions = {
+    mask: "+{38\\0}(00)-000-00-00",
+  };
+
+  const regMasks = IMask(regPhoneNumber, regMaskOptions);
+
   /* validation sumbit the form */
 
   regForm.addEventListener("submit", (e) => {
@@ -348,7 +356,7 @@ window.addEventListener("DOMContentLoaded", () => {
     /* phoneNumber submit */
 
     const phoneNumberIsValid =
-      /^\d{10}$/.test(regPhoneNumber.value) &&
+      /^\+380\(\d{2}\)-\d{3}-\d{2}-\d{2}$/.test(regPhoneNumber.value) &&
       regPhoneNumber.value.trim() !== "";
 
     if (phoneNumberIsValid) {
@@ -388,6 +396,8 @@ window.addEventListener("DOMContentLoaded", () => {
       buttonRegistration.classList.remove("button_active");
 
       success.classList.add("success_active");
+
+      regForm.reset();
 
       setTimeout(() => {
         success.classList.remove("success_active");
@@ -461,7 +471,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   regPhoneNumber.addEventListener("input", () => {
     isRegPhoneNumberValid =
-      /^\d{10}$/.test(regPhoneNumber.value) &&
+      /^\+380\(\d{2}\)-\d{3}-\d{2}-\d{2}$/.test(regPhoneNumber.value) &&
       regPhoneNumber.value.trim() !== "";
 
     if (isRegPhoneNumberValid) {
@@ -607,6 +617,14 @@ window.addEventListener("DOMContentLoaded", () => {
     ".modal-callback__form-error_phoneNumber"
   );
 
+  /* Imask */
+
+  const CallbackMaskOptions = {
+    mask: "+{38\\0}(00)-000-00-00",
+  };
+
+  const callBackMasks = IMask(callbackPhoneNumber, CallbackMaskOptions);
+
   /* validation sumbit the form */
 
   callbackForm.addEventListener("submit", (e) => {
@@ -667,7 +685,7 @@ window.addEventListener("DOMContentLoaded", () => {
     /* phoneNumber submit */
 
     const phoneNumberIsValid =
-      /^\d{10}$/.test(callbackPhoneNumber.value) &&
+      /^\+380\(\d{2}\)-\d{3}-\d{2}-\d{2}$/.test(callbackPhoneNumber.value) &&
       callbackPhoneNumber.value.trim() !== "";
 
     if (phoneNumberIsValid) {
@@ -705,6 +723,8 @@ window.addEventListener("DOMContentLoaded", () => {
       buttonCallback.classList.remove("button_active");
 
       success.classList.add("success_active");
+
+      callbackForm.reset();
 
       setTimeout(() => {
         success.classList.remove("success_active");
@@ -778,7 +798,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   callbackPhoneNumber.addEventListener("input", () => {
     isCallbackPhoneNumberValid =
-      /^\d{10}$/.test(callbackPhoneNumber.value) &&
+      /^\+380\(\d{2}\)-\d{3}-\d{2}-\d{2}$/.test(callbackPhoneNumber.value) &&
       callbackPhoneNumber.value.trim() !== "";
 
     if (isCallbackPhoneNumberValid) {

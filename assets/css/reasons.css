@@ -52,20 +52,15 @@
 }
 
 .reasons-block__wrapper {
-  width: 45%;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .reasons-block__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 250px;
-  padding: 10px;
-}
-
-.reasons-block__content_indent-block-one,
-.reasons-block__content_indent-block-two {
-  padding-bottom: 0px;
 }
 
 .reasons-block__content-decor {
@@ -76,10 +71,13 @@
   border-radius: 100%;
   margin-right: 20px;
   min-width: 113px;
-  min-height: 113px;
+  height: 113px;
 }
 
 .reasons-block__content-description {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   color: #202020;
   font-size: 15px;
   font-family: "Roboto Light";
