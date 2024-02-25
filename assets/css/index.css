@@ -1,21 +1,22 @@
-@import url("./reset.css");
-@import url("./animate.css");
+@import url("reset.css");
+@import url("animate.css");
+@import url("leaflet.css");
 
-@import url("./modal.css");
-@import url("./hamburger.css");
+@import url("modal.css");
+@import url("hamburger.css");
 
-@import url("./header.css");
-@import url("./reasons.css");
-@import url("./mobile.css");
-@import url("./choice.css");
-@import url("./require.css");
-@import url("./word.css");
-@import url("./footer.css");
+@import url("header.css");
+@import url("reasons.css");
+@import url("mobile.css");
+@import url("choice.css");
+@import url("require.css");
+@import url("word.css");
+@import url("footer.css");
 
-@import url("./button-settings.css");
-@import url("./utilities.css");
+@import url("button-settings.css");
+@import url("utilities.css");
 
-@import url("./media.css");
+@import url("media.css");
 
 @font-face {
   font-family: "Roboto Light";

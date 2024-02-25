@@ -99,7 +99,7 @@
                     >Звоните нам ежедневно</span
                   >
                   <a class="subheader__contacts-number" href="tel:+1(23)3456789"
-                    >+1(23)3456789</a
+                    >+380(ХХ)-ХХХ-ХХ-ХХ</a
                   >
                 </div>
 
@@ -621,7 +621,6 @@
                   src="assets/icons/reasons/reason_1-min.png"
                   loading="lazy"
                   alt="image-1"
-                  type="image/png"
                 />
               </picture>
 
@@ -656,7 +655,6 @@
                   src="assets/icons/reasons/reason_2-min.png"
                   loading="lazy"
                   alt="image-2"
-                  type="image/png"
                 />
               </picture>
 
@@ -690,7 +688,6 @@
                   src="assets/icons/reasons/reason_3-min.png"
                   loading="lazy"
                   alt="image-3"
-                  type="image/png"
                 />
               </picture>
 
@@ -725,7 +722,6 @@
                   src="assets/icons/reasons/reason_4-min.png"
                   loading="lazy"
                   alt="image-4"
-                  type="image/png"
                 />
               </picture>
 
@@ -762,7 +758,6 @@
                   src="assets/icons/reasons/reason_5-min.png"
                   loading="lazy"
                   alt="image-5"
-                  type="image/png"
                 />
               </picture>
 
@@ -797,7 +792,6 @@
                   src="assets/icons/reasons/reason_6-min.png"
                   loading="lazy"
                   alt="image-6"
-                  type="image/png"
                 />
               </picture>
 
@@ -832,7 +826,6 @@
                   src="assets/icons/reasons/reason_7-min.png"
                   loading="lazy"
                   alt="image-7"
-                  type="image/png"
                 />
               </picture>
 
@@ -866,7 +859,6 @@
                   src="assets/icons/reasons/reason_8-min.png"
                   loading="lazy"
                   alt="image-8"
-                  type="image/png"
                 />
               </picture>
 
@@ -918,15 +910,16 @@
 
               <picture class="mobile-block__image">
                 <source
+                  class="wow rotateOut"
                   srcset="assets/icons/webp/Plus-min.webp"
                   type="image/webp"
                 />
 
                 <img
+                  class="wow rotateOut"
                   src="assets/icons/Plus-min.png"
                   loading="lazy"
                   alt="plus"
-                  type="image/png"
                 />
               </picture>
             </div>
@@ -944,15 +937,16 @@
 
               <picture class="mobile-block__image">
                 <source
+                  class="wow rotateOut"
                   srcset="assets/icons/webp/Plus-min.webp"
                   type="image/webp"
                 />
 
                 <img
+                  class="wow rotateOut"
                   src="assets/icons/Plus-min.png"
                   loading="lazy"
                   alt="plus"
-                  type="image/png"
                 />
               </picture>
             </div>
@@ -970,15 +964,16 @@
 
               <picture class="mobile-block__image">
                 <source
+                  class="wow rotateOut"
                   srcset="assets/icons/webp/Plus-min.webp"
                   type="image/webp"
                 />
 
                 <img
+                  class="wow rotateOut"
                   src="assets/icons/Plus-min.png"
                   loading="lazy"
                   alt="plus"
-                  type="image/png"
                 />
               </picture>
             </div>
@@ -996,15 +991,16 @@
 
               <picture class="mobile-block__image">
                 <source
+                  class="wow rotateOut"
                   srcset="assets/icons/webp/Plus-min.webp"
                   type="image/webp"
                 />
 
                 <img
+                  class="wow rotateOut"
                   src="assets/icons/Plus-min.png"
                   loading="lazy"
                   alt="plus"
-                  type="image/png"
                 />
               </picture>
             </div>
@@ -1022,15 +1018,16 @@
 
               <picture class="mobile-block__image">
                 <source
+                  class="wow rotateOut"
                   srcset="assets/icons/webp/Plus-min.webp"
                   type="image/webp"
                 />
 
                 <img
+                  class="wow rotateOut"
                   src="assets/icons/Plus-min.png"
                   loading="lazy"
                   alt="plus"
-                  type="image/png"
                 />
               </picture>
             </div>
@@ -1051,15 +1048,16 @@
 
               <picture class="mobile-block__image">
                 <source
+                  class="wow rotateOut"
                   srcset="assets/icons/webp/Plus-min.webp"
                   type="image/webp"
                 />
 
                 <img
+                  class="wow rotateOut"
                   src="assets/icons/Plus-min.png"
                   loading="lazy"
                   alt="plus"
-                  type="image/png"
                 />
               </picture>
             </div>
@@ -1093,7 +1091,6 @@
             src="assets/img/car-min.png"
             loading="lazy"
             alt="car"
-            type="image/png"
           />
         </picture>
 
@@ -1265,8 +1262,11 @@
     </section>
 
     <section class="word" id="to-geolocation">
-      <div class="container">
-        <div class="title-block wow fadeInUp" data-wow-duration="1s">
+      <div class="container container_word">
+        <div
+          class="title-block title-block_word wow fadeInUp"
+          data-wow-duration="1s"
+        >
           <div class="label label_bg-black">геолокация</div>
 
           <div class="title title_bg-black">
@@ -1278,7 +1278,177 @@
           </div>
         </div>
 
-        <a class="word__link" href="#">посмотреть все города</a>
+        <button class="word__link">Спрятать карту</button>
+
+        <div id="map" class="word__map">
+          <div class="word__map-instruction">
+            <svg viewBox="0 0 42 60" xmlns="http://www.w3.org/2000/svg">
+              <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="036---Letf-Click" fill-rule="nonzero">
+                  <path
+                    id="Shape"
+                    d="m41 25v20c0 3.7130309-1.4749958 7.2739856-4.1005051 9.8994949s-6.186464 4.1005051-9.8994949 4.1005051h-12c-7.7319865 0-14-6.2680135-14-14v-20h17v5c0 1.6568542 1.3431458 3 3 3s3-1.3431458 3-3v-5z"
+                    fill="#e8edfc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m38 25v20c0 7.7319865-6.2680135 14-14 14h3c3.7130309 0 7.2739856-1.4749958 9.8994949-4.1005051s4.1005051-6.186464 4.1005051-9.8994949v-20z"
+                    fill="#cad9fc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m18 33c.5279736-.0027317 1.0457023-.14597 1.5-.415-.9268768-.5308381-1.4990459-1.516876-1.5-2.585v-5h-3v5c0 1.6568542 1.3431458 3 3 3z"
+                    fill="#cad9fc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m41 11v14h-17v-5c0-1.6568542-1.3431458-3-3-3v-16h10c5.5228475 0 10 4.4771525 10 10z"
+                    fill="#e8edfc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m31 1h-3c5.5228475 0 10 4.4771525 10 10v14h3v-14c0-5.5228475-4.4771525-10-10-10z"
+                    fill="#cad9fc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m21 1v16c-1.6568542 0-3 1.3431458-3 3v5h-17v-14c0-5.5228475 4.4771525-10 10-10z"
+                    fill="#e8edfc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m18 1v16c-1.6568542 0-3 1.3431458-3 3v5h3v-5c0-1.6568542 1.3431458-3 3-3v-16z"
+                    fill="#cad9fc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m24 20v10c0 1.6568542-1.3431458 3-3 3s-3-1.3431458-3-3v-10c0-1.6568542 1.3431458-3 3-3s3 1.3431458 3 3z"
+                    fill="#e8edfc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m1 11v34c0 7.7319865 6.2680135 14 14 14h3c-7.7319865 0-14-6.2680135-14-14v-34c0-5.5228475 4.4771525-10 10-10h-3c-5.5228475 0-10 4.4771525-10 10z"
+                    fill="#fff"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m4.074 52.026-1.681 1.084c-.77466564-1.2031322-1.37370222-2.5106415-1.779-3.883-.39115579-1.375549-.59763258-2.7970105-.614-4.227h2c.01609577 1.2394322.1953023 2.4713511.533 3.664.35117844 1.1882446.87007217 2.3203151 1.541 3.362z"
+                    fill="#fff"
+                  ></path>
+                  <g fill="#428dff">
+                    <path
+                      id="Shape"
+                      d="m1.593 47.954h-.01c-.55406325.0027566-1.00137518.4534192-.99999689 1.0074876s.45092678 1.0025 1.00499689 1.0025 1.0036186-.4484316 1.00499689-1.0025-.44593364-1.004731-.99999689-1.0074876z"
+                    ></path>
+                    <path
+                      id="Shape"
+                      d="m42 45v-34c-.0071635-6.07216255-4.9278374-10.9928365-11-11h-20c-6.07216255.0071635-10.9928365 4.92783745-11 11v34c0 .5522847.44771525 1 1 1s1-.4477153 1-1v-19h15v4c0 2.209139 1.790861 4 4 4s4-1.790861 4-4v-4h15v19c-.008266 7.1762751-5.8237249 12.991734-13 13h-12c-2.1734778-.0184846-4.3101091-.563365-6.227-1.588-1.90305281-1.053881-3.51725624-2.5602419-4.7-4.386-.30340948-.4415638-.89446028-.5771578-1.36-.312-.23751138.1348222-.40750696.3631686-.46854316.6293701-.06103621.2662015-.007505.5457994.14754316.7706299 1.36368907 2.1054176 3.22524815 3.8423003 5.42 5.057 2.2120472 1.1840115 4.6790683 1.8117496 7.188 1.829h12c8.2803876-.0093685 14.9906315-6.7196124 15-15zm-32.558-42.856-7.3 7.3c.66094393-3.72381336 3.57618664-6.63905607 7.3-7.3zm-7.442 10.27 10.414-10.414h3.172l-13.586 13.586zm0 6 16.414-16.414h1.586v1.586l-18 18zm.414 5.586 17.586-17.586v3.172l-14.414 14.414zm14.586 0h-2.586l2.586-2.586zm.521-5.935-5.935 5.935h-3.172l11.586-11.586v3.728c-1.0543064.2754893-1.9500138.9703039-2.479 1.923zm5.479 11.935c0 1.1045695-.8954305 2-2 2s-2-.8954305-2-2v-10c0-1.1045695.8954305-2 2-2s2 .8954305 2 2zm2-6v-4c-.0068148-1.8184116-1.2393149-3.4034067-3-3.858v-14.142h9c4.9682782.00551113 8.9944889 4.03172183 9 9v13z"
+                    ></path>
+                    <path
+                      id="Shape"
+                      d="m36 45c-.0055111 4.9682782-4.0317218 8.9944889-9 9h-5c-.5522847 0-1 .4477153-1 1s.4477153 1 1 1h5c6.0721626-.0071635 10.9928365-4.9278374 11-11v-3c0-.5522847-.4477153-1-1-1s-1 .4477153-1 1z"
+                    ></path>
+                    <path
+                      id="Shape"
+                      d="m5 30h1c.55228475 0 1-.4477153 1-1s-.44771525-1-1-1h-1c-.55228475 0-1 .4477153-1 1s.44771525 1 1 1z"
+                    ></path>
+                    <path
+                      id="Shape"
+                      d="m14 30c.5522847 0 1-.4477153 1-1s-.4477153-1-1-1h-4c-.55228475 0-1 .4477153-1 1s.44771525 1 1 1z"
+                    ></path>
+                    <path
+                      id="Shape"
+                      d="m37 39c.5522847 0 1-.4477153 1-1v-2c0-.5522847-.4477153-1-1-1s-1 .4477153-1 1v2c0 .5522847.4477153 1 1 1z"
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+
+            <svg viewBox="0 0 42 60" xmlns="http://www.w3.org/2000/svg">
+              <g id="Page-1" fill="none" fill-rule="evenodd">
+                <g id="037---Right-Click" fill-rule="nonzero">
+                  <path
+                    id="Shape"
+                    d="m41 25v20c0 3.7130309-1.4749958 7.2739856-4.1005051 9.8994949s-6.186464 4.1005051-9.8994949 4.1005051h-12c-7.7319865 0-14-6.2680135-14-14v-20h17v5c0 1.6568542 1.3431458 3 3 3s3-1.3431458 3-3v-5z"
+                    fill="#e8edfc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m38 25v20c0 7.7319865-6.2680135 14-14 14h3c3.7130309 0 7.2739856-1.4749958 9.8994949-4.1005051s4.1005051-6.186464 4.1005051-9.8994949v-20z"
+                    fill="#cad9fc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m18 33c.5279736-.0027317 1.0457023-.14597 1.5-.415-.9268768-.5308381-1.4990459-1.516876-1.5-2.585v-5h-3v5c0 1.6568542 1.3431458 3 3 3z"
+                    fill="#cad9fc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m41 11v14h-17v-5c0-1.6568542-1.3431458-3-3-3v-16h10c5.5228475 0 10 4.4771525 10 10z"
+                    fill="#e8edfc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m31 1h-3c5.5228475 0 10 4.4771525 10 10v14h3v-14c0-5.5228475-4.4771525-10-10-10z"
+                    fill="#cad9fc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m21 1v16c-1.6568542 0-3 1.3431458-3 3v5h-17v-14c0-5.5228475 4.4771525-10 10-10z"
+                    fill="#e8edfc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m18 1v16c-1.6568542 0-3 1.3431458-3 3v5h3v-5c0-1.6568542 1.3431458-3 3-3v-16z"
+                    fill="#cad9fc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m24 20v10c0 1.6568542-1.3431458 3-3 3s-3-1.3431458-3-3v-10c0-1.6568542 1.3431458-3 3-3s3 1.3431458 3 3z"
+                    fill="#e8edfc"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m15 59h3c-3.7130309 0-7.2739856-1.4749958-9.89949494-4.1005051-2.62550929-2.6255093-4.10050506-6.186464-4.10050506-9.8994949v-34c0-5.5228475 4.4771525-10 10-10h-3c-5.5228475 0-10 4.4771525-10 10v34c0 7.7319865 6.2680135 14 14 14z"
+                    fill="#fff"
+                  ></path>
+                  <path
+                    id="Shape"
+                    d="m4.074 52.026-1.681 1.084c-.77466564-1.2031322-1.37370222-2.5106415-1.779-3.883-.39115579-1.375549-.59763258-2.7970105-.614-4.227h2c.01609577 1.2394322.1953023 2.4713511.533 3.664.35117844 1.1882446.87007217 2.3203151 1.541 3.362z"
+                    fill="#fff"
+                  ></path>
+                  <g fill="#428dff">
+                    <path
+                      id="Shape"
+                      d="m1.593 47.954h-.01c-.55406325.0027566-1.00137518.4534192-.99999689 1.0074876s.45092678 1.0025 1.00499689 1.0025 1.0036186-.4484316 1.00499689-1.0025-.44593364-1.004731-.99999689-1.0074876z"
+                    ></path>
+                    <path
+                      id="Shape"
+                      d="m0 11v34c0 .5522847.44771525 1 1 1s1-.4477153 1-1v-19h15v4c0 2.209139 1.790861 4 4 4s4-1.790861 4-4v-4h15v19c-.008266 7.1762751-5.8237249 12.991734-13 13h-12c-2.1734778-.0184846-4.3101091-.563365-6.227-1.588-1.90305281-1.053881-3.51725624-2.5602419-4.7-4.386-.30340948-.4415638-.89446028-.5771578-1.36-.312-.23751138.1348222-.40750696.3631686-.46854316.6293701-.06103621.2662015-.007505.5457994.14754316.7706299 1.36368907 2.1054176 3.22524815 3.8423003 5.42 5.057 2.2120472 1.1840115 4.6790683 1.8117496 7.188 1.829h12c8.2803876-.0093685 14.9906315-6.7196124 15-15v-34c-.0005767-1.54248682-.3281083-3.06733231-.961-4.474-.0044023-.01061203-.0094105-.02096241-.015-.031-.6424172-1.42107641-1.5790407-2.6896763-2.748-3.722-.008-.009-.01-.021-.019-.03s-.033-.019-.048-.032c-1.9951846-1.74722961-4.5569116-2.71058678-7.209-2.711h-20c-6.07216255.0071635-10.9928365 4.92783745-11 11zm40 13h-3.586l3.586-3.586zm0-6.414-6.414 6.414h-3.172l9.586-9.586zm-.3-8.867c.1977582.74425212.2985918 1.5109237.3 2.281v.586l-12.414 12.414h-2.586v-.586zm-.8-2.03-13.9 13.897v-.586c-.0034834-.7118154-.1993989-1.4094405-.567-2.019l13.125-13.125c.5230185.55181516.9739488 1.16772818 1.342 1.833zm-16.9-4.689h3.586l-3.586 3.586zm0 6.414 6.414-6.414h2.586c.188 0 .372.017.557.028l-9.557 9.558zm0 6 11.918-11.914c.7503847.25539124 1.4635984.60913984 2.121 1.052l-13.02 13.02c-.317607-.1908318-.6606965-.3356095-1.019-.43zm.412 4.171c.3766388.3745261.5882848.8838442.588 1.415v10c0 1.1045695-.8954305 2-2 2s-2-.8954305-2-2v-10c.000575-.8080962.4873936-1.5364465 1.2338455-1.8460097.7464519-.3095631 1.6058513-.1395065 2.1781545.4310097zm-2.412-2.443c-1.7606851.4545933-2.9931852 2.0395884-3 3.858v4h-15v-13c.00551113-4.96827817 4.03172183-8.99448887 9-9h9z"
+                    ></path>
+                    <path
+                      id="Shape"
+                      d="m36 45c-.0055111 4.9682782-4.0317218 8.9944889-9 9h-5c-.5522847 0-1 .4477153-1 1s.4477153 1 1 1h5c6.0721626-.0071635 10.9928365-4.9278374 11-11v-3c0-.5522847-.4477153-1-1-1s-1 .4477153-1 1z"
+                    ></path>
+                    <path
+                      id="Shape"
+                      d="m5 30h1c.55228475 0 1-.4477153 1-1s-.44771525-1-1-1h-1c-.55228475 0-1 .4477153-1 1s.44771525 1 1 1z"
+                    ></path>
+                    <path
+                      id="Shape"
+                      d="m14 30c.5522847 0 1-.4477153 1-1s-.4477153-1-1-1h-4c-.55228475 0-1 .4477153-1 1s.44771525 1 1 1z"
+                    ></path>
+                    <path
+                      id="Shape"
+                      d="m37 39c.5522847 0 1-.4477153 1-1v-2c0-.5522847-.4477153-1-1-1s-1 .4477153-1 1v2c0 .5522847.4477153 1 1 1z"
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1496,7 +1666,6 @@
             src="assets/img/uber-adv-min.jpg"
             loading="lazy"
             alt="adv"
-            type="image/png"
           />
         </picture>
       </a>
@@ -1517,7 +1686,6 @@
           src="assets/img/coupon-min.jpg"
           loading="lazy"
           alt="coupon"
-          type="image/png"
         />
       </picture>
     </div>
@@ -1533,14 +1701,12 @@
       </a>
     </div>
 
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/leaflet-src.js"></script>
 
     <script src="assets/js/wow.js"></script>
 
     <script src="assets/js/imask.js"></script>
 
-    <script>
-      new WOW().init();
-    </script>
+    <script src="assets/js/index.js"></script>
   </body>
 </html>

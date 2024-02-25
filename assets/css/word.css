@@ -2,24 +2,57 @@
 
 .word {
   position: relative;
-  height: 100vh;
-  padding: 49px 0;
+  padding: 50px 0px 0px;
+  min-height: 600px;
+}
+
+.container_word {
+  max-width: 100%;
+}
+
+.title-block_word {
+  margin-bottom: 30px;
+}
+
+.word__map {
+  z-index: 0;
+  height: 600px;
+  overflow: hidden;
+  margin-top: 30px;
+  transition: height 0.5s ease;
+}
+
+.word__map_active {
+  height: 0;
+}
+
+.word__map-instruction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 12px;
+  right: 60px;
+  z-index: 1000;
+  height: 80px;
+  width: 30px;
 }
 
 .word__link {
+  display: block;
+  margin: 0 auto;
   text-transform: uppercase;
-  position: absolute;
-  bottom: 50px;
-  text-align: center;
   font-size: 15px;
   font-family: "Roboto Regular";
   color: #1fbad6;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+  background-color: transparent;
+  border: 1px solid #1fbad6;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .word__link:hover {
-  color: #fff;
+  background-color: #1fbad6;
+  color: white;
 }

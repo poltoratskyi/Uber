@@ -894,8 +894,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const subheaderLogoLink = document.querySelector(".subheader__logo-link");
 
-  const wordLink = document.querySelector(".word__link");
-
   const smoothScroll = (element) => {
     element.scrollIntoView({ behavior: "smooth" });
   };
@@ -946,10 +944,6 @@ window.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
 
     smoothScroll(toGeolocation);
-  });
-
-  wordLink.addEventListener("click", (e) => {
-    e.preventDefault();
   });
 
   /* /////////////////////////////////////////////////////////////////////// */
@@ -1042,4 +1036,76 @@ window.addEventListener("DOMContentLoaded", () => {
   validator.addEventListener("click", (e) => {
     e.preventDefault();
   });
+
+  /* leaflet section */
+
+  const openMap = document.querySelector(".word__link");
+  const leaflet = document.querySelector(".word__map");
+
+  openMap.addEventListener("click", () => {
+    leaflet.classList.toggle("word__map_active");
+
+    if (leaflet.classList.contains("word__map_active")) {
+      openMap.innerHTML = "РАЗВЕРНУТЬ КАРТУ";
+    } else {
+      openMap.innerHTML = "СПРЯТАТЬ КАРТУ";
+    }
+  });
+
+  /* /////////////////////////////////////////////////////////////////////// */
+
+  /* Initializing plugins */
+
+  /* Map */
+
+  let map = L.map("map", {
+    scrollWheelZoom: false,
+    touchZoom: true,
+  }).setView([50.4501, 30.5234], 13);
+
+  map.on("click", () => {
+    map.zoomIn();
+  });
+
+  map.on("contextmenu", () => {
+    map.zoomOut();
+  });
+
+  map.zoomControl.setPosition("topright");
+
+  let marker1 = L.marker([50.4501, 30.5234]).addTo(map);
+  let marker2 = L.marker([50.4567, 30.5198]).addTo(map);
+  let marker3 = L.marker([50.4592, 30.5269]).addTo(map);
+  let marker4 = L.marker([50.4443, 30.5261]).addTo(map);
+
+  marker1
+    .bindPopup(
+      "<b>Главный официальный филиал Uber в Киеве</b><br>Адрес: ул. Хрещатик, 1, Киев, 01001<br>Время работы: Пн-Вс, 24/7"
+    )
+    .openPopup();
+  marker2
+    .bindPopup(
+      "<b>Офис UberEats в Киеве</b><br>Адрес: бул. Леси Украинки, 10, Киев, 01034<br>Время работы: Пн-Пт: 10:00 - 22:00, Сб-Вс: 12:00 - 20:00"
+    )
+    .openPopup();
+  marker3
+    .bindPopup(
+      "<b>Центр поддержки Uber для водителей</b><br>Адрес: ул. Велика Васильківська, 45, Киев, 02000<br>Время работы: Пн-Пт: 09:00 - 18:00"
+    )
+    .openPopup();
+  marker4
+    .bindPopup(
+      "<b>Офис Uber Green в Киеве</b><br>Адрес: просп. Голосеевский, 50, Киев, 03034<br>Время работы: Пн-Пт: 09:00 - 17:00, Сб-Вс: выходной"
+    )
+    .openPopup();
+
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+
+  /* Animate css */
+
+  new WOW().init();
 });
