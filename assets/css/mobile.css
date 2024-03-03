@@ -22,7 +22,7 @@
 }
 
 .mobile-block__title,
-.mobile-block__hiden-title {
+.mobile-block__hidden-title {
   position: absolute;
   color: #fff;
   font-size: 24px;
@@ -39,12 +39,12 @@
 }
 
 .mobile-block__title_active,
-.mobile-block__hiden-title {
+.mobile-block__hidden-title {
   visibility: hidden;
   opacity: 0;
 }
 
-.mobile-block__hiden-title_active {
+.mobile-block__hidden-title_active {
   visibility: visible;
   opacity: 1;
 }

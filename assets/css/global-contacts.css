@@ -1,0 +1,25 @@
+.contacts-number {
+  color: #fff;
+  font-size: 20px;
+  font-family: "Roboto Regular";
+  text-transform: uppercase;
+}
+
+.contacts-number:hover {
+  color: #4ce2ff;
+}
+
+.contacts-number_contacts-page {
+  color: #222;
+  font-size: 16px;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.contacts-number_contacts-page:last-child {
+  margin-bottom: 0px;
+}
+
+.contacts-number_contacts-page:hover {
+  color: #1eacc7;
+}

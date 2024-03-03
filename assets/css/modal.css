@@ -1,23 +1,40 @@
 /* form section*/
 
-.registration-overflow,
-.callback-overflow {
+.reg-overlay,
+.cb-overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.reg-overlay_active,
+.cb-overlay_active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.registration,
+.callback {
   position: fixed;
   top: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 5;
   visibility: hidden;
   transform: scale(0);
-  transition: opacity 0.3s ease, visibility 0s linear 0.3s, transform 0.3s ease;
+  transition: linear 0.5s, transform 0.5s ease;
 }
 
-.registration-overflow_active,
-.callback-overflow_active {
+.registration_active,
+.callback_active {
   visibility: visible;
   transform: scale(1);
-  transition: opacity 0.3s ease, visibility 0s linear 0s, transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .modal-registration,
@@ -29,7 +46,7 @@
   transform: translate(-50%, -50%);
   margin: 0 auto;
   width: 600px;
-  min-height: auto;
+  height: 600px;
   background-color: #fff;
   border-radius: 10px;
   overflow-y: auto;
@@ -38,11 +55,14 @@
 .modal-registration__header,
 .modal-callback__header {
   display: flex;
+  position: sticky;
   justify-content: space-between;
   align-items: center;
   padding: 0px 0px 0px 20px;
-  height: 50px;
+  top: 0;
+  height: 60px;
   border-bottom: 1px solid #00000027;
+  background-color: white;
 }
 
 .modal-registration__header-title,
@@ -79,15 +99,14 @@
 .modal-callback__form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 55%;
   border-right: 1px solid #e9e9e9;
   padding-right: 5%;
-  min-height: 550px;
 }
 
 .modal-registration__form-content,
 .modal-callback__form-content {
+  margin-bottom: 15px;
   width: 100%;
 }
 
@@ -147,10 +166,12 @@
 
 .modal-registration__form-privacy,
 .modal-callback__form-privacy {
+  text-align: justify;
   font-size: 12px;
   font-family: "Roboto Light";
   line-height: 16px;
   color: #797878;
+  margin-bottom: 5px;
 }
 
 .modal-registration__form-privacy-link,

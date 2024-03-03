@@ -13,7 +13,11 @@
 @import url("word.css");
 @import url("footer.css");
 
-@import url("button-settings.css");
+@import url("contacts.css");
+
+@import url("global-button.css");
+@import url("global-contacts.css");
+
 @import url("utilities.css");
 
 @import url("media.css");

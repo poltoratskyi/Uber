@@ -12,6 +12,7 @@
 }
 
 .menu__items {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,17 +91,6 @@
   font-size: 12px;
   color: #fff;
   font-family: "Roboto Light";
-}
-
-.subheader__contacts-number {
-  color: #fff;
-  font-size: 20px;
-  font-family: "Roboto Regular";
-  text-transform: uppercase;
-}
-
-.subheader__contacts-number:hover {
-  color: #4ce2ff;
 }
 
 .header__promo {

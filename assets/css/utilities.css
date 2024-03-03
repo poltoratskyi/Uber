@@ -70,6 +70,7 @@
   opacity: 0;
   padding: 1px;
   height: 250px;
+  transition: 1s ease;
 }
 
 @keyframes ring {
@@ -88,19 +89,20 @@
 .consultation__link {
   visibility: hidden;
   opacity: 0;
-  transition: 0.3s ease;
+  transform: translateY(100%);
+  transition: linear 0.3s, transform 0.3s ease;
 }
 
 .consultation__link_active {
   visibility: visible;
   opacity: 1;
-  padding: 1px;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
 }
 
 .consultation_active {
   visibility: visible;
   opacity: 1;
-  transition: 1s ease;
 }
 
 .button-open-consultation,

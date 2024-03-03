@@ -110,6 +110,8 @@ window.addEventListener("DOMContentLoaded", () => {
     if (hamburger.classList.contains("hamburger_active")) {
       hamburger.classList.remove("hamburger_active");
 
+      regOverlay.classList.remove("reg-overlay_active");
+
       document.body.style.overflow = "auto";
 
       menu.classList.remove("menu_active");
@@ -119,6 +121,8 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     } else {
       hamburger.classList.add("hamburger_active");
+
+      regOverlay.classList.add("reg-overlay_active");
 
       document.body.style.overflow = "hidden";
 
@@ -135,6 +139,8 @@ window.addEventListener("DOMContentLoaded", () => {
   menuItems.forEach((menuItem) => {
     menuItem.addEventListener("click", () => {
       hamburger.classList.remove("hamburger_active");
+
+      regOverlay.classList.remove("reg-overlay_active");
 
       document.body.style.overflow = "auto";
 
@@ -159,7 +165,7 @@ window.addEventListener("DOMContentLoaded", () => {
   mobileBlockWrappers.forEach((i) => {
     const mobileImage = i.querySelector(".mobile-block__image");
     const mobileTitle = i.querySelector(".mobile-block__title");
-    const mobileHidenTitle = i.querySelector(".mobile-block__hiden-title");
+    const mobileHiddenTitle = i.querySelector(".mobile-block__hidden-title");
 
     mobileImage.addEventListener("click", () => {
       if (mobileImage) {
@@ -170,8 +176,8 @@ window.addEventListener("DOMContentLoaded", () => {
         mobileTitle.classList.toggle("mobile-block__title_active");
       }
 
-      if (mobileHidenTitle) {
-        mobileHidenTitle.classList.toggle("mobile-block__hiden-title_active");
+      if (mobileHiddenTitle) {
+        mobileHiddenTitle.classList.toggle("mobile-block__hidden-title_active");
       }
     });
   });
@@ -180,9 +186,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   /* Registration form block */
 
-  const overflowHidenRegistration = document.querySelector(
-    ".registration-overflow"
-  );
+  const registration = document.querySelector(".registration");
   const buttonRegistration = document.querySelector(".button_registration");
   const buttonRegistrationForm = document.querySelector(
     ".button_registration-form"
@@ -191,11 +195,16 @@ window.addEventListener("DOMContentLoaded", () => {
     ".modal-registration__header-close"
   );
   const buttonAdvertising = document.querySelector(".button-advertising");
+  const regOverlay = document.querySelector(".reg-overlay");
 
-  /* Open modal window of registration form  -> btn */
+  /* Open modal window of registration form -> btn */
 
   buttonRegistration.addEventListener("click", () => {
-    overflowHidenRegistration.classList.add("registration-overflow_active");
+    regOverlay.classList.add("reg-overlay_active");
+
+    hamburger.style.visibility = "hidden";
+
+    registration.classList.add("registration_active");
 
     document.body.style.overflow = "hidden";
 
@@ -209,22 +218,30 @@ window.addEventListener("DOMContentLoaded", () => {
   /* Open modal window of registration form -> adv */
 
   buttonAdvertising.addEventListener("click", () => {
-    overflowHidenRegistration.classList.add("registration-overflow_active");
+    regOverlay.classList.add("reg-overlay_active");
+
+    hamburger.style.visibility = "hidden";
+
+    registration.classList.add("registration_active");
 
     document.body.style.overflow = "hidden";
 
     buttonRegistration.classList.add("button_active");
 
     advertising.classList.remove("advertising_active");
+
+    document.addEventListener("keydown", closeRegModalOnEscape);
   });
 
   /* Close modal window of registration form */
 
   modalCloseRegistration.forEach((i) => {
     i.addEventListener("click", () => {
-      overflowHidenRegistration.classList.remove(
-        "registration-overflow_active"
-      );
+      regOverlay.classList.remove("reg-overlay_active");
+
+      hamburger.style.visibility = "visible";
+
+      registration.classList.remove("registration_active");
 
       document.body.style.overflow = "auto";
 
@@ -236,9 +253,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const closeRegModalOnEscape = (event) => {
     if (event.key === "Escape") {
-      overflowHidenRegistration.classList.remove(
-        "registration-overflow_active"
-      );
+      regOverlay.classList.remove("reg-overlay_active");
+
+      hamburger.style.visibility = "visible";
+
+      registration.classList.remove("registration_active");
 
       document.body.style.overflow = "auto";
 
@@ -356,8 +375,9 @@ window.addEventListener("DOMContentLoaded", () => {
     /* phoneNumber submit */
 
     const phoneNumberIsValid =
-      /^\+380\(\d{2}\)-\d{3}-\d{2}-\d{2}$/.test(regPhoneNumber.value) &&
-      regPhoneNumber.value.trim() !== "";
+      /^\+380\((50|66|95|99|63|67|68|96|97|98|39|73|93)\)-\d{3}-\d{2}-\d{2}$/.test(
+        regPhoneNumber.value
+      ) && regPhoneNumber.value.trim() !== "";
 
     if (phoneNumberIsValid) {
       regPhoneNumberError.style.display = "none";
@@ -382,12 +402,16 @@ window.addEventListener("DOMContentLoaded", () => {
     /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
     if (isAllValid === false) {
+      hamburger.style.visibility = "hidden";
+
       e.preventDefault();
     } else {
       e.preventDefault();
-      overflowHidenRegistration.classList.remove(
-        "registration-overflow_active"
-      );
+      registration.classList.remove("registration_active");
+
+      hamburger.style.visibility = "visible";
+
+      regOverlay.classList.remove("reg-overlay_active");
 
       document.body.style.overflow = "auto";
 
@@ -471,8 +495,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   regPhoneNumber.addEventListener("input", () => {
     isRegPhoneNumberValid =
-      /^\+380\(\d{2}\)-\d{3}-\d{2}-\d{2}$/.test(regPhoneNumber.value) &&
-      regPhoneNumber.value.trim() !== "";
+      /^\+380\((50|66|95|99|63|67|68|96|97|98|39|73|93)\)-\d{3}-\d{2}-\d{2}$/.test(
+        regPhoneNumber.value
+      ) && regPhoneNumber.value.trim() !== "";
 
     if (isRegPhoneNumberValid) {
       regPhoneNumberError.style.display = "none";
@@ -529,17 +554,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
   /* Callback form block*/
 
-  const callbackOverflowHiden = document.querySelector(".callback-overflow");
+  const callback = document.querySelector(".callback");
   const buttonCallback = document.querySelector(".button_callback");
   const buttonCallbackForm = document.querySelector(".button_callback-form");
   const modalCloseCallback = document.querySelectorAll(
     ".modal-callback__header-close"
   );
+  const cbOverlay = document.querySelector(".cb-overlay");
 
-  /* Open modal window of callback form */
+  /* Open modal window of callback form -> btn */
 
   buttonCallback.addEventListener("click", () => {
-    callbackOverflowHiden.classList.add("callback-overflow_active");
+    cbOverlay.classList.add("cb-overlay_active");
+
+    hamburger.style.visibility = "hidden";
+
+    callback.classList.add("callback_active");
 
     document.body.style.overflow = "hidden";
 
@@ -548,11 +578,31 @@ window.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", closeCallbackModalOnEscape);
   });
 
+  /* Open modal window of callback form -> coupon */
+
+  const couponImg = document.querySelector(".coupon__img");
+
+  couponImg.addEventListener("click", () => {
+    cbOverlay.classList.add("cb-overlay_active");
+
+    hamburger.style.visibility = "hidden";
+
+    callback.classList.add("callback_active");
+
+    document.body.style.overflow = "hidden";
+
+    buttonCallback.classList.add("button_active");
+  });
+
   /* Close modal window of callback form */
 
   modalCloseCallback.forEach((i) => {
     i.addEventListener("click", () => {
-      callbackOverflowHiden.classList.remove("callback-overflow_active");
+      cbOverlay.classList.remove("cb-overlay_active");
+
+      hamburger.style.visibility = "visible";
+
+      callback.classList.remove("callback_active");
 
       document.body.style.overflow = "auto";
 
@@ -566,7 +616,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const closeCallbackModalOnEscape = (event) => {
     if (event.key === "Escape") {
-      callbackOverflowHiden.classList.remove("callback-overflow_active");
+      cbOverlay.classList.remove("cb-overlay_active");
+
+      hamburger.style.visibility = "visible";
+
+      callback.classList.remove("callback_active");
 
       document.body.style.overflow = "auto";
 
@@ -685,8 +739,9 @@ window.addEventListener("DOMContentLoaded", () => {
     /* phoneNumber submit */
 
     const phoneNumberIsValid =
-      /^\+380\(\d{2}\)-\d{3}-\d{2}-\d{2}$/.test(callbackPhoneNumber.value) &&
-      callbackPhoneNumber.value.trim() !== "";
+      /^\+380\((50|66|95|99|63|67|68|96|97|98|39|73|93)\)-\d{3}-\d{2}-\d{2}$/.test(
+        callbackPhoneNumber.value
+      ) && callbackPhoneNumber.value.trim() !== "";
 
     if (phoneNumberIsValid) {
       callbackPhoneNumberError.style.display = "none";
@@ -711,10 +766,16 @@ window.addEventListener("DOMContentLoaded", () => {
     /* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
     if (isAllValid === false) {
+      hamburger.style.visibility = "hidden";
+
       e.preventDefault();
     } else {
       e.preventDefault();
-      callbackOverflowHiden.classList.remove("callback-overflow_active");
+      callback.classList.remove("callback_active");
+
+      hamburger.style.visibility = "visible";
+
+      cbOverlay.classList.remove("cb-overlay_active");
 
       document.body.style.overflow = "auto";
 
@@ -798,8 +859,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   callbackPhoneNumber.addEventListener("input", () => {
     isCallbackPhoneNumberValid =
-      /^\+380\(\d{2}\)-\d{3}-\d{2}-\d{2}$/.test(callbackPhoneNumber.value) &&
-      callbackPhoneNumber.value.trim() !== "";
+      /^\+380\((50|66|95|99|63|67|68|96|97|98|39|73|93)\)-\d{3}-\d{2}-\d{2}$/.test(
+        callbackPhoneNumber.value
+      ) && callbackPhoneNumber.value.trim() !== "";
 
     if (isCallbackPhoneNumberValid) {
       callbackPhoneNumberError.style.display = "none";
@@ -845,20 +907,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   /* Close coupon block */
 
-  const coupon = document.querySelector(".coupon");
   const couponClose = document.querySelector(".coupon__close");
-  const couponImg = document.querySelector(".coupon__img");
+  const coupon = document.querySelector(".coupon");
 
   couponClose.addEventListener("click", () => {
     coupon.style.display = "none";
-  });
-
-  couponImg.addEventListener("click", () => {
-    callbackOverflowHiden.classList.add("callback-overflow_active");
-
-    document.body.style.overflow = "hidden";
-
-    buttonCallback.classList.add("button_active");
   });
 
   /* /////////////////////////////////////////////////////////////////////// */
@@ -1037,6 +1090,8 @@ window.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
   });
 
+  /* /////////////////////////////////////////////////////////////////////// */
+
   /* leaflet section */
 
   const openMap = document.querySelector(".word__link");
@@ -1061,7 +1116,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let map = L.map("map", {
     scrollWheelZoom: false,
     touchZoom: true,
-  }).setView([50.4501, 30.5234], 13);
+  }).setView([49.0266, 31.4832], 6);
 
   map.on("click", () => {
     map.zoomIn();
@@ -1073,31 +1128,62 @@ window.addEventListener("DOMContentLoaded", () => {
 
   map.zoomControl.setPosition("topright");
 
-  let marker1 = L.marker([50.4501, 30.5234]).addTo(map);
-  let marker2 = L.marker([50.4567, 30.5198]).addTo(map);
-  let marker3 = L.marker([50.4592, 30.5269]).addTo(map);
-  let marker4 = L.marker([50.4443, 30.5261]).addTo(map);
+  let marker1 = L.marker([50.4567, 30.5198]).addTo(map);
+  let marker2 = L.marker([50.4501, 30.5234]).addTo(map);
+  let marker3 = L.marker([49.8397, 24.0297]).addTo(map);
+  let marker4 = L.marker([48.9226, 24.7111]).addTo(map);
+  let marker5 = L.marker([48.5092, 32.2623]).addTo(map);
+  let marker6 = L.marker([49.8398, 24.0297]).addTo(map);
+  let marker7 = L.marker([48.5126, 35.0342]).addTo(map);
+  let marker8 = L.marker([49.9808, 36.2527]).addTo(map);
+  let marker9 = L.marker([46.4775, 30.7326]).addTo(map);
+  let marker10 = L.marker([49.556, 25.5906]).addTo(map);
+  let marker11 = L.marker([50.8333, 34.4844]).addTo(map);
 
   marker1
     .bindPopup(
-      "<b>Главный официальный филиал Uber в Киеве</b><br>Адрес: ул. Хрещатик, 1, Киев, 01001<br>Время работы: Пн-Вс, 24/7"
+      "<b>Главный офис Uber в Киеве</b><br>Адрес: ул. Хрещатик, 1, Киев, 01001<br>Время работы: Пн-Вс, 24/7"
     )
     .openPopup();
-  marker2
-    .bindPopup(
-      "<b>Офис UberEats в Киеве</b><br>Адрес: бул. Леси Украинки, 10, Киев, 01034<br>Время работы: Пн-Пт: 10:00 - 22:00, Сб-Вс: 12:00 - 20:00"
-    )
-    .openPopup();
-  marker3
-    .bindPopup(
-      "<b>Центр поддержки Uber для водителей</b><br>Адрес: ул. Велика Васильківська, 45, Киев, 02000<br>Время работы: Пн-Пт: 09:00 - 18:00"
-    )
-    .openPopup();
-  marker4
-    .bindPopup(
-      "<b>Офис Uber Green в Киеве</b><br>Адрес: просп. Голосеевский, 50, Киев, 03034<br>Время работы: Пн-Пт: 09:00 - 17:00, Сб-Вс: выходной"
-    )
-    .openPopup();
+
+  marker2.bindPopup(
+    "<b>Филиал UberEats в Киеве</b><br>Адрес: бул. Леси Украинки, 10, Киев, 01034<br>Время работы: Пн-Пт: 10:00 - 22:00, Сб-Вс: 12:00 - 20:00"
+  );
+
+  marker3.bindPopup(
+    "<b>Филиал  Uber Green в Львове</b><br>Адрес: просп. Свободы, 12, Львов, 79000<br>Время работы: Пн-Вс: 9:00 - 21:00"
+  );
+
+  marker4.bindPopup(
+    "<b>Филиал Uber Freight в Ивано-Франковске</b><br>Адрес: вул. Грушевського, 7, Ивано-Франковск, 76000<br>Время работы: Пн-Пт: 9:00 - 20:00, Сб: 10:00 - 18:00"
+  );
+
+  marker5.bindPopup(
+    "<b>Филиал Uber Health в Кропивницком</b><br>Адрес: вул. Київська, 17, Кропивницкий, 25006<br>Время работы: Пн-Вс: 10:00 - 19:00"
+  );
+  marker6.bindPopup(
+    "<b>Филиал Uber в Тернополе</b><br>Адрес: вул. Чорновола, 3, Тернополь, 46001<br>Время работы: Пн-Пт: 9:00 - 18:00"
+  );
+
+  marker7.bindPopup(
+    "<b>Филиал Uber for Business в Днепре</b><br>Адрес: просп. Слобожанський, 16, Днепр, 49000<br>Время работы: Пн-Вс: 10:00 - 20:00"
+  );
+
+  marker8.bindPopup(
+    "<b>Филиал Uber Elevate в Харькове</b><br>Адрес: просп. Науки, 24, Харьков, 61000<br>Время работы: Пн-Пт: 9:00 - 21:00, Сб-Вс: 10:00 - 18:00"
+  );
+
+  marker9.bindPopup(
+    "<b>Филиал Uber Jump в Одессе</b><br>Адрес: вул. Катерининська, 1, Одесса, 65000<br>Время работы: Пн-Вс: 10:00 - 19:00"
+  );
+
+  marker10.bindPopup(
+    "<b>Филиал  Uber ATG (Advanced Technologies Group) в Хмельницком</b><br>Адрес: вул. Проскурівська, 13, Хмельницкий, 29000<br>Время работы: Пн-Пт: 9:00 - 20:00, Сб: 10:00 - 18:00"
+  );
+
+  marker11.bindPopup(
+    "<b>Филиал  Uber Air в Полтаве</b><br>Адрес: вул. Шевченка, 23, Полтава, 36000<br>Время работы: Пн-Вс: 10:00 - 19:00"
+  );
 
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,

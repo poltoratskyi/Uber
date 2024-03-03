@@ -49,19 +49,18 @@
     width: 70%;
   }
 
+  /* word section */
+
+  .word .container_word {
+    width: 100%;
+  }
+
   /* utilities section */
 
   .advertising,
   .coupon {
     width: 450px;
     height: 225px;
-  }
-
-  /* modal section */
-
-  .modal-registration__wrapper,
-  .modal-callback__wrapper {
-    padding: 10px;
   }
 }
 
@@ -83,6 +82,10 @@
 
   .menu__item-link {
     font-size: 13px;
+  }
+
+  .contacts-number {
+    font-size: 18px;
   }
 
   /* reasons section */
@@ -115,6 +118,26 @@
     padding: 15px 15px;
     left: 10%;
   }
+
+  /* contacts pages section */
+
+  .contacts__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+  }
+
+  .contacts-content__item {
+    margin-bottom: 0px;
+  }
+
+  .contacts-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .contacts-content_billing {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 767px) {
@@ -136,7 +159,7 @@
     padding-right: 10px;
   }
 
-  .subheader__contacts-number {
+  .contacts-number {
     font-size: 14px;
   }
 
@@ -189,7 +212,7 @@
     background-color: #000;
     width: 50%;
     transition: 0.3s ease;
-    z-index: 3;
+    z-index: 5;
     overflow-y: auto;
     height: 100%;
   }
@@ -214,9 +237,6 @@
 
   .require-block__wrapper {
     margin-bottom: 35px;
-  }
-
-  .require-block__wrapper {
     flex-direction: column;
   }
 
@@ -258,7 +278,7 @@
   }
 
   .mobile-block__title,
-  .mobile-block__hiden-title_active {
+  .mobile-block__hidden-title_active {
     font-size: 20px;
   }
 
@@ -292,6 +312,7 @@
 
   .title {
     font-size: 24px;
+    line-height: 24px;
   }
 
   /* choice section */
@@ -336,6 +357,12 @@
     width: 65px;
     height: 65px;
   }
+
+  /* contacts pages section */
+
+  .contacts-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 575px) {
@@ -360,6 +387,16 @@
     display: none;
   }
 
+  .modal-registration__wrapper,
+  .modal-callback__wrapper {
+    flex-direction: column;
+  }
+
+  .header__content-title_contacts {
+    line-height: 24px;
+    margin-bottom: 0px;
+  }
+
   /* modal section */
 
   .modal-registration,
@@ -379,10 +416,11 @@
 
   .modal-registration__form,
   .modal-callback__form {
-    width: auto;
-    min-height: 100vh;
+    width: 100%;
+    /*  min-height: 100vh; */
     border-right: none;
     padding-right: 0px;
+    margin-bottom: 25px;
   }
 
   /* utilities section */
@@ -392,7 +430,8 @@
   }
 
   .autorisation-form {
-    display: none;
+    width: 100%;
+    padding-left: 0%;
   }
 
   /* reasons section */
@@ -441,6 +480,7 @@
   /* require section */
 
   .require-title {
+    text-align: center;
     font-size: 16px;
   }
 
@@ -456,10 +496,6 @@
   }
 
   /* word section */
-
-  .container_word {
-    width: 100%;
-  }
 
   .word__link {
     font-size: 12px;
@@ -477,5 +513,45 @@
 
   .footer__languages-links {
     font-size: 10px;
+  }
+
+  /* contacts pages section */
+
+  .contacts__wrapper {
+    justify-items: center;
+  }
+
+  .contacts-content {
+    width: 100%;
+  }
+
+  .contacts-content__item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contacts-content__item-img {
+    margin-bottom: 5px;
+  }
+
+  .contacts-content__item-info {
+    text-align: center;
+    padding: 0px 0px;
+  }
+
+  .contacts-content__item-info-items-list_media {
+    padding-right: 5px;
+  }
+
+  .contacts-content__item-info-items-list_media:last-child {
+    padding-right: 0px;
+  }
+
+  .contacts-content__item-info-title,
+  .contacts-content__item-info-subtitle,
+  .contacts-content__item-info-description,
+  .contacts-content__item-info-items-list-link,
+  .contacts-content__item-info-items-list_billing {
+    font-size: 14px;
   }
 }
