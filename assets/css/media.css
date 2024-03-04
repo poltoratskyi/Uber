@@ -266,11 +266,6 @@
     font-size: 14px;
   }
 
-  .reasons-block__content-decor {
-    min-width: 90px;
-    min-height: 90px;
-  }
-
   /* mobile section */
 
   .mobile {
@@ -441,6 +436,7 @@
   }
 
   .reasons-block__content-decor {
+    height: 170px;
     margin: 0px 0px 10px 0px;
   }
 
