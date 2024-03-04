@@ -1,4 +1,81 @@
-/* arrow-up section */
+/* preloader block */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 16;
+  opacity: 1;
+  transition: 0.5s all;
+  visibility: visible;
+}
+
+.preloader_active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* choice-languages block */
+
+.choice-languages {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 15;
+  opacity: 1;
+  transition: 0.5s all;
+  visibility: visible;
+}
+
+.choice-languages__wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.choice-languages__title {
+  color: #fff;
+  font-size: 38px;
+  font-family: "Roboto Bold";
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.choice-languages__items-link {
+  font-size: 18px;
+  font-family: "Roboto Regular";
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1fbad6;
+  background-color: transparent;
+  border: 1px solid #1fbad6;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.choice-languages__items-link:last-child {
+  margin-bottom: 0px;
+}
+
+.choice-languages__items-link:hover {
+  background-color: #1fbad6;
+  color: white;
+}
+
+.choice-languages_active {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* arrow-up block */
 
 .arrow-up {
   position: fixed;
@@ -16,7 +93,7 @@
   opacity: 1;
 }
 
-/* success section */
+/* success block */
 
 .success {
   background-color: #1f1f1f;
@@ -55,7 +132,7 @@
   line-height: 20px;
 }
 
-/* consultation section */
+/* consultation block */
 
 .consultation {
   display: flex;
@@ -168,7 +245,7 @@
   display: block;
 }
 
-/* advertising section */
+/* advertising block */
 
 .advertising,
 .coupon {

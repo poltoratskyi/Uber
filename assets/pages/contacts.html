@@ -11,6 +11,26 @@
     <link rel="stylesheet" href="../css/index.css" />
   </head>
   <body>
+    <div class="preloader">
+      <div class="loader"></div>
+    </div>
+
+    <div class="choice-languages">
+      <div class="choice-languages__wrapper">
+        <h2 class="choice-languages__title">Выберите язык</h2>
+
+        <ul class="choice-languages__items">
+          <li class="choice-languages__items-link">
+            <a href="#">Украинский</a>
+          </li>
+          <li class="choice-languages__items-link"><a href="#">Русский</a></li>
+          <li class="choice-languages__items-link">
+            <a href="#">Английский</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <header class="header header_contacs" id="to-header">
       <div class="decor">
         <div class="hamburger">
@@ -156,7 +176,11 @@
                   class="modal-callback__form-error modal-callback__form-error_firstName"
                 >
                   Пожалуйста, укажите имя, состоящее из кириллических символов и
-                  имеющее длину не менее двух букв
+                  имеющее длину не менее двух букв, например, Ян.
+                  <br />
+                  <br />
+                  Помните, что до или после написания имени нельзя указывать
+                  пробелы.
                 </p>
               </div>
 
@@ -178,7 +202,11 @@
                   class="modal-callback__form-error modal-callback__form-error_lastName"
                 >
                   Укажите фамилию, содержащую кириллические символы и имеющую
-                  длину не менее трех букв
+                  длину не менее трех букв, например, Петров.
+                  <br />
+                  <br />
+                  Помните, что до или после написания фамилии нельзя указывать
+                  пробелы.
                 </p>
               </div>
 
@@ -248,8 +276,7 @@
                 <p
                   class="modal-callback__form-error modal-callback__form-error_phoneNumber"
                 >
-                  Пожалуйста, введите действительный номер телефона, состоящий
-                  из десяти цифр
+                  Пожалуйста, введите действительный номер телефона
                 </p>
               </div>
 

@@ -1,4 +1,46 @@
 window.addEventListener("DOMContentLoaded", () => {
+  /* Preloader block -> local Storage */
+
+  const preloader = document.querySelector(".preloader");
+
+  document.body.onload = () => {
+    /* langChoice block local Storage */
+
+    const langChoiceVisited = localStorage.getItem("langChoiceVisited");
+
+    if (!preloader.classList.contains("preloader_active")) {
+      preloader.classList.add("preloader_active");
+
+      /* langChoice block -> local Storage  */
+
+      localStorage.setItem("langChoiceVisited", true);
+      document.body.style.overflow = "hidden";
+    }
+
+    /* validation langChoice block -> local Storage  */
+
+    if (langChoiceVisited === "true") {
+      choiceLang.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  };
+
+  /* choice-languages */
+
+  const choiceLang = document.querySelector(".choice-languages");
+  const choiceLangLinks = document.querySelectorAll(
+    ".choice-languages__items-link"
+  );
+
+  choiceLangLinks.forEach((i) => {
+    i.addEventListener("click", () => {
+      choiceLang.classList.add("choice-languages_active");
+      document.body.style.overflow = "auto";
+    });
+  });
+
+  /* /////////////////////////////////////////////////////////////////////// */
+
   /* Check webp block */
 
   const supportsWebP = () => {
@@ -417,6 +459,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
       advertising.style.display = "none";
 
+      localStorage.setItem("advertisingClosed", true);
+
       buttonRegistration.classList.remove("button_active");
 
       success.classList.add("success_active");
@@ -781,6 +825,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
       coupon.style.display = "none";
 
+      localStorage.setItem("couponClosed", true);
+
       buttonCallback.classList.remove("button_active");
 
       success.classList.add("success_active");
@@ -894,25 +940,52 @@ window.addEventListener("DOMContentLoaded", () => {
 
   /* /////////////////////////////////////////////////////////////////////// */
 
-  /* Close advertising block */
+  /* Advertising block */
 
   const advertisingClose = document.querySelector(".advertising__close");
   const advertising = document.querySelector(".advertising");
 
+  /* adv block local Storage */
+
+  const advertisingClosed = localStorage.getItem("advertisingClosed");
+
   advertisingClose.addEventListener("click", () => {
+    /* adv block -> local Storage  */
+
+    localStorage.setItem("advertisingClosed", true);
     advertising.style.display = "none";
   });
 
+  /* validation adv block -> local Storage  */
+
+  if (advertisingClosed === "true") {
+    advertising.style.display = "none";
+  }
+
   /* /////////////////////////////////////////////////////////////////////// */
 
-  /* Close coupon block */
+  /* Coupon block */
 
   const couponClose = document.querySelector(".coupon__close");
   const coupon = document.querySelector(".coupon");
 
+  /* coupon block local Storage */
+
+  const couponClosed = localStorage.getItem("couponClosed");
+
   couponClose.addEventListener("click", () => {
+    /* coupon block -> local Storage  */
+
+    localStorage.setItem("couponClosed", true);
+
     coupon.style.display = "none";
   });
+
+  /* validation adv block -> local Storage  */
+
+  if (couponClosed === "true") {
+    coupon.style.display = "none";
+  }
 
   /* /////////////////////////////////////////////////////////////////////// */
 

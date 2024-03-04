@@ -39,12 +39,10 @@
 
 .modal-registration,
 .modal-callback {
-  display: block;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0 auto;
   width: 600px;
   height: 600px;
   background-color: #fff;
