@@ -44,9 +44,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
   /* Preloader block -> local Storage */
 
-  const preloader = document.querySelector(".preloader");
-
   document.body.onload = () => {
+    const preloader = document.querySelector(".preloader");
+
+    /* Choice-languages */
+    const langOverlay = document.querySelector(".lang-overlay");
+    const choiceLangLinks = document.querySelectorAll(
+      ".languages-content__menu-item"
+    );
+
+    choiceLangLinks.forEach((i) => {
+      i.addEventListener("click", (e) => {
+        /* langChoice block -> local Storage  */
+        e.preventDefault();
+        localStorage.setItem("langChoiceVisited", true);
+        langOverlay.classList.add("lang-overlay_active");
+        document.body.style.overflow = "auto";
+      });
+    });
+
     /* langChoice block local Storage */
     const langChoiceVisited = localStorage.getItem("langChoiceVisited");
 
@@ -62,22 +78,6 @@ window.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = "auto";
     }
   };
-
-  /* Choice-languages */
-  const langOverlay = document.querySelector(".lang-overlay");
-  const choiceLangLinks = document.querySelectorAll(
-    ".languages-content__menu-item"
-  );
-
-  choiceLangLinks.forEach((i) => {
-    i.addEventListener("click", () => {
-      /* langChoice block -> local Storage  */
-      localStorage.setItem("langChoiceVisited", true);
-
-      langOverlay.classList.add("lang-overlay_active");
-      document.body.style.overflow = "auto";
-    });
-  });
 
   /* /////////////////////////////////////////////////////////////////////// */
 
