@@ -1,41 +1,80 @@
-/* header section */
 window.addEventListener("DOMContentLoaded", () => {
+  /* Initializing plugins */
+
+  /* Map */
+  let map = L.map("map", {
+    scrollWheelZoom: false,
+    touchZoom: true,
+  }).setView([50.4501, 30.5234], 14);
+
+  map.on("click", () => {
+    map.zoomIn();
+  });
+
+  map.on("contextmenu", () => {
+    map.zoomOut();
+  });
+
+  map.zoomControl.setPosition("topright");
+
+  let marker1 = L.marker([50.4567, 30.5198]).addTo(map);
+  let marker2 = L.marker([50.4501, 30.5234]).addTo(map);
+
+  marker1
+    .bindPopup(
+      "<b>Главный офис Uber в Киеве</b><br>Адрес: ул. Хрещатик, 1, Киев, 01001<br>Время работы: Пн-Вс, 24/7"
+    )
+    .openPopup();
+
+  marker2.bindPopup(
+    "<b>Филиал UberEats в Киеве</b><br>Адрес: бул. Леси Украинки, 10, Киев, 01034<br>Время работы: Пн-Пт: 10:00 - 22:00, Сб-Вс: 12:00 - 20:00"
+  );
+
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+
+  /* Animate css */
+
+  new WOW().init();
+
+  /* /////////////////////////////////////////////////////////////////////// */
+
   /* Preloader block -> local Storage */
 
   const preloader = document.querySelector(".preloader");
 
   document.body.onload = () => {
     /* langChoice block local Storage */
-
     const langChoiceVisited = localStorage.getItem("langChoiceVisited");
 
     if (!preloader.classList.contains("preloader_active")) {
       preloader.classList.add("preloader_active");
 
-      /* langChoice block -> local Storage  */
-
-      localStorage.setItem("langChoiceVisited", true);
       document.body.style.overflow = "hidden";
     }
 
-    /* validation langChoice block -> local Storage  */
-
+    /* Validation langChoice block -> local Storage  */
     if (langChoiceVisited === "true") {
-      choiceLang.style.display = "none";
+      langOverlay.style.display = "none";
       document.body.style.overflow = "auto";
     }
   };
 
-  /* choice-languages */
-
-  const choiceLang = document.querySelector(".choice-languages");
+  /* Choice-languages */
+  const langOverlay = document.querySelector(".lang-overlay");
   const choiceLangLinks = document.querySelectorAll(
-    ".choice-languages__items-link"
+    ".languages-content__menu-item"
   );
 
   choiceLangLinks.forEach((i) => {
     i.addEventListener("click", () => {
-      choiceLang.classList.add("choice-languages_active");
+      /* langChoice block -> local Storage  */
+      localStorage.setItem("langChoiceVisited", true);
+
+      langOverlay.classList.add("lang-overlay_active");
       document.body.style.overflow = "auto";
     });
   });
@@ -52,8 +91,7 @@ window.addEventListener("DOMContentLoaded", () => {
     return false;
   };
 
-  /* header section */
-
+  /* Header section */
   if (supportsWebP()) {
     document.querySelector(".header").style.backgroundImage =
       "url(../../assets/img/bg/webp/contacts-min.webp)";
@@ -62,8 +100,9 @@ window.addEventListener("DOMContentLoaded", () => {
       "url(../../assets/img/bg/contacts-min.png)";
   }
 
-  /* word section */
+  document.querySelector(".header").style.backgroundPosition = "center";
 
+  /* Word section */
   if (supportsWebP()) {
     document.querySelector(".word").style.backgroundImage =
       "url(../../assets/img/bg/webp/map-min.webp)";
@@ -72,7 +111,7 @@ window.addEventListener("DOMContentLoaded", () => {
       "url(../../assets/img/bg/map-min.jpg";
   }
 
-  document.querySelector(".header").style.backgroundPosition = "center";
+  /* /////////////////////////////////////////////////////////////////////// */
 
   /* Hamburger block */
 
@@ -81,8 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const decorGrey = document.querySelector(".decor_translucent");
 
-  /* Open/close hamburger menu */
-
+  /* Open -> close hamburger menu */
   hamburger.addEventListener("click", () => {
     if (hamburger.classList.contains("hamburger_active")) {
       hamburger.classList.remove("hamburger_active");
@@ -112,7 +150,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Close hamburger menu when clicking on the button */
-
   menuItems.forEach((menuItem) => {
     menuItem.addEventListener("click", () => {
       hamburger.classList.remove("hamburger_active");
@@ -142,7 +179,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const cbOverlay = document.querySelector(".cb-overlay");
 
   /* Open modal window of callback form -> btn */
-
   buttonCallback.addEventListener("click", () => {
     cbOverlay.classList.add("cb-overlay_active");
 
@@ -158,7 +194,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Open modal window of callback form -> coupon */
-
   const couponImg = document.querySelector(".coupon__img");
 
   couponImg.addEventListener("click", () => {
@@ -174,7 +209,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Close modal window of callback form */
-
   modalCloseCallback.forEach((i) => {
     i.addEventListener("click", () => {
       cbOverlay.classList.remove("cb-overlay_active");
@@ -192,7 +226,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Close modal window of callback form -> keydown Escape */
-
   const closeCallbackModalOnEscape = (event) => {
     if (event.key === "Escape") {
       cbOverlay.classList.remove("cb-overlay_active");
@@ -210,7 +243,6 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 
   /* Privacy link callback form window */
-
   const callbackPrivacyLink = document.querySelectorAll(
     ".modal-callback__form-privacy-link"
   );
@@ -222,7 +254,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Callback validation and sumbit the form window */
-
   const callbackForm = document.querySelector(".modal-callback__form");
 
   const callbackFirstName = document.getElementById("firstName-callback");
@@ -251,18 +282,15 @@ window.addEventListener("DOMContentLoaded", () => {
   );
 
   /* Imask */
-
   const CallbackMaskOptions = {
     mask: "+{38\\0}(00)-000-00-00",
   };
 
   const callBackMasks = IMask(callbackPhoneNumber, CallbackMaskOptions);
 
-  /* validation sumbit the form */
-
+  /* Validation sumbit the form */
   callbackForm.addEventListener("submit", (e) => {
-    /* firstname submit */
-
+    /* firstName submit */
     const firstNameIsValid =
       /^[а-яА-Я]{2,}$/.test(callbackFirstName.value) &&
       callbackFirstName.value.trim() !== "";
@@ -276,7 +304,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     /* lastName submit */
-
     const lastNameIsValid =
       /^[а-яА-Я]{3,}$/.test(callbackLastName.value) &&
       callbackLastName.value.trim() !== "";
@@ -289,8 +316,7 @@ window.addEventListener("DOMContentLoaded", () => {
       callbackLastName.style.border = "1px solid red";
     }
 
-    /* cities submit */
-
+    /* Cities submit */
     const citiesIsValid = callbackCities.value.trim() !== "";
 
     if (citiesIsValid) {
@@ -301,8 +327,7 @@ window.addEventListener("DOMContentLoaded", () => {
       callbackCities.style.border = "1px solid red";
     }
 
-    /* coupon submit */
-
+    /* Coupon submit */
     const couponIsValid =
       callbackСouponCode.value === "uber2024" ||
       callbackСouponCode.value.trim() === "";
@@ -316,7 +341,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     /* phoneNumber submit */
-
     const phoneNumberIsValid =
       /^\+380\((50|66|95|99|63|67|68|96|97|98|39|73|93)\)-\d{3}-\d{2}-\d{2}$/.test(
         callbackPhoneNumber.value
@@ -330,8 +354,7 @@ window.addEventListener("DOMContentLoaded", () => {
       callbackPhoneNumber.style.border = "1px solid red";
     }
 
-    /* Result Submit check */
-
+    /* Result submit check */
     const resultValidation = [
       firstNameIsValid,
       lastNameIsValid,
@@ -377,8 +400,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   /* ---------------------------------------------------------------------- */
 
-  /* firstname input */
-
+  /* firstName input */
   let isCallbackFirstNameValid = false;
 
   callbackFirstName.addEventListener("input", () => {
@@ -398,7 +420,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   /* lastName input */
-
   let isCallbackLastNameValid = false;
 
   callbackLastName.addEventListener("input", () => {
@@ -417,8 +438,7 @@ window.addEventListener("DOMContentLoaded", () => {
     updateInputButtonState();
   });
 
-  /* cities input */
-
+  /* Cities input */
   let isCallbackCitiesValid = false;
 
   callbackCities.addEventListener("input", () => {
@@ -436,7 +456,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   /* phoneNumber input */
-
   let isCallbackPhoneNumberValid = false;
 
   callbackPhoneNumber.addEventListener("input", () => {
@@ -456,8 +475,7 @@ window.addEventListener("DOMContentLoaded", () => {
     updateInputButtonState();
   });
 
-  /* Result Input check */
-
+  /* Result input check */
   const updateInputButtonState = () => {
     const resultCallbackInputValid =
       isCallbackFirstNameValid &&
@@ -481,19 +499,17 @@ window.addEventListener("DOMContentLoaded", () => {
   const couponClose = document.querySelector(".coupon__close");
   const coupon = document.querySelector(".coupon");
 
-  /* coupon block local Storage */
-
+  /* Coupon block local Storage */
   const couponClosed = localStorage.getItem("couponClosed");
 
   couponClose.addEventListener("click", () => {
-    /* coupon block -> local Storage  */
-
+    /* Coupon block -> local Storage  */
     localStorage.setItem("couponClosed", true);
 
     coupon.style.display = "none";
   });
 
-  /* validation adv block -> local Storage  */
+  /* Validation adv block -> local Storage  */
 
   if (couponClosed === "true") {
     coupon.style.display = "none";
@@ -520,7 +536,6 @@ window.addEventListener("DOMContentLoaded", () => {
     let scroll = window.scrollY;
 
     /* Decor */
-
     if (scroll > decor.offsetTop) {
       decorGrey.style.top = "0px";
     } else {
@@ -528,39 +543,64 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  /* Smooth scroll block*/
+  /* /////////////////////////////////////////////////////////////////////// */
 
+  /* Smooth scroll links block */
+
+  /* contactsMainPageLink */
+  const contactsMainPageLink = document.getElementById("contacts");
+
+  /* contactsMainPageHeader link */
+  const contactsMainPageHeader = document.getElementById("contacts-header");
+  /* Links -> contactsMainPageHeader */
+  const contactsMainPageHeaderLogo = document.querySelector(
+    ".subheader__logo-link"
+  );
+
+  /* contactsMainPageGeolocation link */
+  const contactsMainPageGeolocation = document.getElementById(
+    "contacts-geolocation"
+  );
+
+  /* Links -> contactsMainPageGeolocation */
+  const contactsMainPageGeolocationLink = document.getElementById(
+    "contacts-geolocation-link"
+  );
+
+  const contactsMainPageGeolocationFooter = document.getElementById(
+    "contacts-footer-geolocation"
+  );
+
+  /* smoothScroll */
   const smoothScroll = (element) => {
     element.scrollIntoView({ behavior: "smooth" });
   };
 
-  const subheaderLogoLink = document.querySelector(".subheader__logo-link");
-  const toGeneral = document.getElementById("to-header");
-
-  const contacts = document.getElementById("contacts");
-
-  const geolocation = document.getElementById("geolocation");
-  const toGeolocation = document.getElementById("to-geolocation");
-
-  subheaderLogoLink.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    smoothScroll(toGeneral);
-  });
-
-  contacts.addEventListener("click", (e) => {
+  /* contactsMainPageLink preventDefault */
+  contactsMainPageLink.addEventListener("click", (e) => {
     e.preventDefault();
   });
 
-  geolocation.addEventListener("click", (e) => {
+  /* links -> contactsMainPageHeader */
+  contactsMainPageHeaderLogo.addEventListener("click", (e) => {
     e.preventDefault();
+    smoothScroll(contactsMainPageHeader);
+  });
 
-    smoothScroll(toGeolocation);
+  /* links -> contactsMainPageLinkGeolocation */
+  contactsMainPageGeolocation.addEventListener("click", (e) => {
+    e.preventDefault();
+    smoothScroll(contactsMainPageGeolocationLink);
+  });
+
+  contactsMainPageGeolocationFooter.addEventListener("click", (e) => {
+    e.preventDefault();
+    smoothScroll(contactsMainPageGeolocationLink);
   });
 
   /* /////////////////////////////////////////////////////////////////////// */
 
-  /* leaflet section */
+  /* Leaflet section */
 
   const openMap = document.querySelector(".word__link");
   const leaflet = document.querySelector(".word__map");
@@ -577,41 +617,27 @@ window.addEventListener("DOMContentLoaded", () => {
 
   /* /////////////////////////////////////////////////////////////////////// */
 
-  /* Initializing plugins */
+  /* preventDefault block -> links */
 
-  /* Map */
-
-  let map = L.map("map", {
-    scrollWheelZoom: false,
-    touchZoom: true,
-  }).setView([50.4501, 30.5234], 14);
-
-  map.on("click", () => {
-    map.zoomIn();
-  });
-
-  map.on("contextmenu", () => {
-    map.zoomOut();
-  });
-
-  map.zoomControl.setPosition("topright");
-
-  let marker1 = L.marker([50.4567, 30.5198]).addTo(map);
-  let marker2 = L.marker([50.4501, 30.5234]).addTo(map);
-
-  marker1
-    .bindPopup(
-      "<b>Главный офис Uber в Киеве</b><br>Адрес: ул. Хрещатик, 1, Киев, 01001<br>Время работы: Пн-Вс, 24/7"
-    )
-    .openPopup();
-
-  marker2.bindPopup(
-    "<b>Филиал UberEats в Киеве</b><br>Адрес: бул. Леси Украинки, 10, Киев, 01034<br>Время работы: Пн-Пт: 10:00 - 22:00, Сб-Вс: 12:00 - 20:00"
+  /* Footer menu supports */
+  const footerSupportLinks = document.querySelectorAll(
+    ".footer__menu-support-link"
   );
 
-  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    maxZoom: 19,
-    attribution:
-      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-  }).addTo(map);
+  footerSupportLinks.forEach((links) => {
+    links.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
+  });
+
+  /* Footer menu languages */
+  const footerLanguageLinks = document.querySelectorAll(
+    ".footer__menu-language-link"
+  );
+
+  footerLanguageLinks.forEach((links) => {
+    links.addEventListener("click", (e) => {
+      e.preventDefault();
+    });
+  });
 });

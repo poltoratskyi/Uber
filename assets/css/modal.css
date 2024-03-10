@@ -164,7 +164,7 @@
 
 .modal-registration__form-privacy,
 .modal-callback__form-privacy {
-  text-align: justify;
+  text-align: left;
   font-size: 12px;
   font-family: "Roboto Light";
   line-height: 16px;

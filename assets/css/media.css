@@ -295,11 +295,11 @@
     padding: 7px 0px;
   }
 
-  .footer__feedback-links {
+  .footer__menu-items {
     margin: 15px 0px 10px;
   }
 
-  .footer__support-links {
+  .footer__menu-supports {
     margin-bottom: 10px;
   }
 
@@ -499,11 +499,11 @@
 
   /* footer section */
 
-  .footer__feedback-links {
+  .footer__menu-items {
     font-size: 10px;
   }
 
-  .footer__support-links {
+  .footer__menu-supports {
     font-size: 9px;
   }
 

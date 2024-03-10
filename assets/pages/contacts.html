@@ -15,23 +15,33 @@
       <div class="loader"></div>
     </div>
 
-    <div class="choice-languages">
-      <div class="choice-languages__wrapper">
-        <h2 class="choice-languages__title">Выберите язык</h2>
+    <div class="lang-overlay">
+      <div class="languages-content">
+        <h2 class="languages-content__title">Выберите язык</h2>
 
-        <ul class="choice-languages__items">
-          <li class="choice-languages__items-link">
-            <a href="#">Украинский</a>
-          </li>
-          <li class="choice-languages__items-link"><a href="#">Русский</a></li>
-          <li class="choice-languages__items-link">
-            <a href="#">Английский</a>
-          </li>
-        </ul>
+        <nav class="languages-content__menu">
+          <ul class="languages-content__menu-items">
+            <li class="languages-content__menu-item">
+              <a class="languages-content__menu-item-link" href="#"
+                >Украинский</a
+              >
+            </li>
+
+            <li class="languages-content__menu-item">
+              <a class="languages-content__menu-item-link" href="#">Русский</a>
+            </li>
+
+            <li class="languages-content__menu-item">
+              <a class="languages-content__menu-item-link" href="#"
+                >Английский</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
 
-    <header class="header header_contacs" id="to-header">
+    <header class="header header_contacs" id="contacts-header">
       <div class="decor">
         <div class="hamburger">
           <div class="hamburger__wrapper">
@@ -45,44 +55,40 @@
           <nav class="menu">
             <ul class="menu__items">
               <li class="menu__item">
-                <a class="menu__item-link" id="general" href="../../index.html"
-                  >Главная</a
-                >
+                <a class="menu__item-link" href="../../index.html">Главная</a>
               </li>
+
               <li class="menu__item">
                 <a
                   class="menu__item-link"
-                  id="on-your-car"
-                  href="../../index.html#to-conditions"
+                  href="../../index.html#main-conditions"
                   >Со своим автомобилем</a
                 >
               </li>
+
               <li class="menu__item">
                 <a
                   class="menu__item-link"
-                  id="on-our-car"
-                  href="../../index.html#to-conditions"
+                  href="../../index.html#main-conditions"
                   >На автомобиле компании</a
                 >
               </li>
+
               <li class="menu__item">
-                <a
-                  class="menu__item-link"
-                  id="require"
-                  href="../../index.html#to-require"
+                <a class="menu__item-link" href="../../index.html#main-require"
                   >Требования</a
                 >
               </li>
+
               <li class="menu__item">
-                <a class="menu__item-link" id="contacts" href="#to-contacts"
-                  >Контакты</a
-                >
+                <a class="menu__item-link" id="contacts" href="#">Контакты</a>
               </li>
+
               <li class="menu__item">
                 <a
                   class="menu__item-link"
-                  id="geolocation"
-                  href="#to-geolocation"
+                  id="contacts-geolocation"
+                  href="#contacts-geolocation-link"
                   >Геолокация
                 </a>
               </li>
@@ -96,7 +102,7 @@
           <div class="container">
             <div class="subheader__wrapper">
               <div class="subheader__logo">
-                <a class="subheader__logo-link" href="#to-header">
+                <a class="subheader__logo-link" href="#contacts-main-header">
                   <svg
                     class="subheader__logo-icon"
                     xmlns="http://www.w3.org/2000/svg"
@@ -426,7 +432,10 @@
 
         <div class="contacts__wrapper">
           <div class="contacts-content contacts-content_billing">
-            <div class="contacts-content__item">
+            <div
+              class="contacts-content__item wow fadeInUp"
+              data-wow-duration="1s"
+            >
               <div class="contacts-content__item-img">
                 <svg
                   width="50px"
@@ -536,7 +545,7 @@
             </div>
           </div>
 
-          <div class="contacts-content">
+          <div class="contacts-content wow fadeInUp" data-wow-duration="1s">
             <div class="contacts-content__item">
               <div class="contacts-content__item-img">
                 <svg
@@ -859,7 +868,7 @@
       </div>
     </section>
 
-    <section class="word" id="to-geolocation">
+    <section class="word" id="contacts-geolocation-link">
       <div class="container container_word">
         <div
           class="title-block title-block_word wow fadeInUp"
@@ -1049,39 +1058,66 @@
     <footer class="footer">
       <div class="footer__line"></div>
 
-      <nav class="footer__menu-link">
-        <ul class="footer__feedback-links" data-wow-duration="1s">
-          <li class="footer__feedback-link">
-            <a href="#">на главную</a>
+      <nav class="footer__menu">
+        <ul class="footer__menu-items">
+          <li class="footer__menu-item">
+            <a class="footer__menu-item-link" href="../../index.html"
+              >на главную</a
+            >
           </li>
 
-          <li class="footer__feedback-link"><a href="#">города</a></li>
+          <li class="footer__menu-item">
+            <a
+              class="footer__menu-item-link"
+              id="contacts-footer-geolocation"
+              href="#contacts-geolocation"
+              >города</a
+            >
+          </li>
 
-          <li class="footer__feedback-link">
-            <a href="#">для водителей</a>
+          <li class="footer__menu-item">
+            <a
+              class="footer__menu-item-link"
+              href="../../index.html#main-conditions"
+              >для водителей</a
+            >
           </li>
         </ul>
 
-        <ul class="footer__support-links" data-wow-duration="1s">
-          <li class="footer__support-link">
-            <a href="#">центр поддержки</a>
+        <ul class="footer__menu-supports">
+          <li class="footer__menu-support">
+            <a class="footer__menu-support-link" href="#">центр поддержки</a>
           </li>
 
-          <li class="footer__support-link"><a href="#">вакансии</a></li>
-
-          <li class="footer__support-link">
-            <a href="#">разработчики</a>
+          <li class="footer__menu-support">
+            <a class="footer__menu-support-link" href="#">вакансии</a>
           </li>
 
-          <li class="footer__support-link"><a href="#">блог</a></li>
+          <li class="footer__menu-support">
+            <a class="footer__menu-support-link" href="#">разработчики</a>
+          </li>
 
-          <li class="footer__support-link"><a href="#">о нас</a></li>
+          <li class="footer__menu-support">
+            <a class="footer__menu-support-link" href="#">блог</a>
+          </li>
+
+          <li class="footer__menu-support">
+            <a class="footer__menu-support-link" href="#">о нас</a>
+          </li>
         </ul>
 
-        <ul class="footer__languages-links" data-wow-duration="1s">
-          <li class="footer__languages-link"><a href="#">Украинский</a></li>
-          <li class="footer__languages-link"><a href="#">Русский</a></li>
-          <li class="footer__languages-link"><a href="#">Английский</a></li>
+        <ul class="footer__menu-languages">
+          <li class="footer__menu-language">
+            <a class="footer__menu-language-link" href="#">Украинский</a>
+          </li>
+
+          <li class="footer__menu-language">
+            <a class="footer__menu-language-link" href="#">Русский</a>
+          </li>
+
+          <li class="footer__menu-language">
+            <a class="footer__menu-language-link" href="#">Английский</a>
+          </li>
         </ul>
       </nav>
     </footer>
