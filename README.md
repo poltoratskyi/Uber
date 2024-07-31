@@ -10,14 +10,11 @@
 
 ## Description
 
-This project is my personal endeavor aimed at refining my skills in web development. It emulates a virtual taxi service similar to Uber, serving as a mini-application designed to simulate the experience of ordering a taxi. The project is crafted with simplicity in mind and will undergo gradual enhancements to further elevate my proficiency in web technologies.
+Project Uber is a web-based application for moving users quickly and safely.
 
 ## Functionality
 
-- Basic functionality mimicking a virtual taxi service akin to Uber.
-- Streamlined structure providing a user-friendly experience for ordering taxis.
-- Ongoing development to enhance features and refine the simulation of real-world taxi service operations.
-- Optimization for mobile devices, ensuring a seamless experience across various screen sizes.
+- Basic registration functionality and optimization for mobile devices.
 
 ## Requirements
 
@@ -45,8 +42,6 @@ Uncompressed Code:
 - Open `index.html` to run the project.
 
 ## Questions and Discussions
-
-This project is personal, and contributions are welcome. If you have questions or want to discuss any changes:
 
 - Email: poltoratskyialexander@gmail.com
 - [SimpleX Chat](https://simplex.chat/contact#/?v=1-4&smp=smp%3A%2F%2FZKe4uxF4Z_aLJJOEsC-Y6hSkXgQS5-oc442JQGkyP8M%3D%40smp17.simplex.im%2FzBpStVueK_9NcNKGgWWZuAw4EuibJks7%23%2F%3Fv%3D1-2%26dh%3DMCowBQYDK2VuAyEAzFBHs6ZksFf4chVCsrjlbqNb1HoVra57zWxeCdnjMUI%253D%26srv%3Dogtwfxyi3h2h5weftjjpjmxclhb5ugufa5rcyrmg7j4xlch7qsr5nuqd.onion) - optional
